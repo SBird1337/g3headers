@@ -275,6 +275,12 @@ extern u8 scripting_npc;
 POKEAGB_EXTERN void script_env_init_script(void* script);
 
 /**
+ * Get the script from an npc with the given ID on the current map
+ * @address{BPRE,0805FC38}
+ */
+POKEAGB_EXTERN void* npc_get_script_by_npc_id(u8 npc_id);
+
+/**
  * Mark state as script is running
  * @address{BPRE,08069940}
  */
@@ -297,6 +303,18 @@ POKEAGB_EXTERN void flag_set(u16 flag);
  * @address{BPRE,0806E6D0}
  */
  POKEAGB_EXTERN bool flag_check(u16 flag);
+
+/**
+ * Clear a flag's status
+ * @address{BPRE,0806E6A8}
+ */
+ POKEAGB_EXTERN bool flag_clear(u16 flag);
+
+/**
+ * Gets the address of flag in the flag_byte array
+ * @address{BPRE, 0806E5C0}
+ */
+POKEAGB_EXTERN u8* flag_byte_access(u16 flag);
 
 /**
  * Check script_env_2 is enabled 

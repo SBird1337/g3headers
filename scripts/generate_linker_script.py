@@ -50,7 +50,7 @@ def build_entry(member):
 
 def write_entry(entry):
     thumb = entry['kind'] == 'function'
-    return '{name} = 0x{address:08x}{extra};'.format(extra='|1' if thumb else '', **entry)
+    return 'PROVIDE({name} = 0x{address:08x}{extra});'.format(extra='|1' if thumb else '', **entry)
 
 
 def load_addresses(filename):

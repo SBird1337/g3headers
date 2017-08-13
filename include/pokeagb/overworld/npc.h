@@ -99,6 +99,21 @@ extern struct NpcState npc_states[16];
 POKEAGB_EXTERN u8 npc_half_reset_no_checks(struct NpcState* npc);
 
 /**
+ * @address{BPRE, 08081BEC}
+ */
+POKEAGB_EXTERN u32 npc_trainer_and_raycast_hit(struct NpcState* npc);
+
+/**
+ * @address{BPRE, 08080334}
+ */
+POKEAGB_EXTERN void spot_trainer_8080334(u8 npc_id, void* script);
+
+/**
+ * @address{BPRE,08081E68}
+ */
+POKEAGB_EXTERN void spot_trainer_8081E68(struct NpcState* npc, u8 raycast_info);
+
+/**
  * Reset NPC when state->bitfield & 0x40
  *
  * @address{BPRE,08063D1C}

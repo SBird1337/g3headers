@@ -52,6 +52,11 @@ enum PlayerAvatarType {
  */
 u8 player_avatar_get_type(enum PlayerAvatarType type);
 
+/**
+ * @address{BPRE,08040CC4}
+ */
+POKEAGB_EXTERN u8 player_cant_double_battle();
+
 POKEAGB_END_DECL
 
 #endif

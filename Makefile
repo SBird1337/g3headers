@@ -1,6 +1,6 @@
 .PHONY: all macros docs test
 
-all: test docs macros
+all: docs macros
 	@cp -avr linker build
 	@./scripts/generate_linker_script.py
 	@cp -avr include build
