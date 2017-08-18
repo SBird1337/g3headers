@@ -55,6 +55,22 @@ struct NpcState {
     u8 field23;
 };
 
+struct NpcType {
+    u16 tiles_tag;
+    u16 pal_num;
+    u16 pal_tag_2;
+    u16 field_6;
+    struct Coords16 pos_neg_center;
+    u8 pal_slot_unk;
+    u8 field_D;
+    u16 pal_table;
+    u32 oam;
+    u32 field_14;
+    u32 image_anims;
+    u32 gfx_table;
+    u32 rot_scale_anims;
+};
+
 /**
  * An NPC in the ROM.
  */
@@ -121,11 +137,52 @@ POKEAGB_EXTERN void spot_trainer_8081E68(struct NpcState* npc, u8 raycast_info);
 POKEAGB_EXTERN void npc_half_reset(struct NpcState* npc);
 
 /**
+ * Initially set a npc position taking camera positions into account
+ * @address{BPRE,08063AD4}
+ */
+POKEAGB_EXTERN void npc_fix_position(u16 x, u16 y, s16 *obj_x, s16 *obj_y);
+
+/**
+ * Returns the animation image number corresponding to the given direction
+ * @address{BPRE,08063430}
+ */
+POKEAGB_EXTERN u8 npc_direction_to_obj_anim_image_number(u8 direction);
+
+/**
+ * @address{BPRE,080682F8}
+ */
+POKEAGB_EXTERN void npc_y_height_related(u8 height, struct Object *obj, u8 a3);
+
+/**
+ * @address{BPRE,080679F8}
+ */
+POKEAGB_EXTERN void npc_obj_offscreen_culling_and_flag_update(struct NpcState *npc, struct Object *obj);
+
+/**
+ * @address{BPRE,0805F538}
+ */
+POKEAGB_EXTERN void pal_patch_for_npc(u16 tag, u16 index);
+
+/**
  * Set the NPC to have the given state (applymovement values) and apply associated animation.
  *
  * @address{BPRE,08063CA4}
  */
 POKEAGB_EXTERN int npc_set_state_2(struct NpcState* npc, u8 state);
+
+/**
+ * Spawn an NPC
+ *
+ * @address{BPRE,0805E590}
+ */
+POKEAGB_EXTERN u8 npc_spawn_with_provided_template_int(struct RomNpc *npc, struct Template *template, u8 bank, u8 map, u16 x, u16 y);
+
+/**
+ * Create an NpcState for the given RomNpc and return its number in the global NpcState Array
+ *
+ * @address{BPRE,0805E080}
+ */
+POKEAGB_EXTERN u8 rom_npc_to_npc_state(struct RomNpc *npc, u8 map, u8 bank);
 
 /**
  * Reset the NPC when state->bitfield & 0x80 (set by some tile behaviors)
