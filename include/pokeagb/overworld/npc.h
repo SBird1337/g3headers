@@ -67,7 +67,7 @@ struct NpcType {
     u32 oam;
     u32 field_14;
     u32 image_anims;
-    u32 gfx_table;
+    struct SpriteTiles *gfx_table;
     u32 rot_scale_anims;
 };
 
@@ -171,11 +171,22 @@ POKEAGB_EXTERN void pal_patch_for_npc(u16 tag, u16 index);
 POKEAGB_EXTERN int npc_set_state_2(struct NpcState* npc, u8 state);
 
 /**
+ * Create a struct Template that can be used to spawn an NPC
+ * @address{BPRE,0805E940}
+ */
+POKEAGB_EXTERN void npc_to_objtemplate__with_indexed_objfunc(u8 id, u8 running, struct Template *template, u32 *field14_out );
+
+/**
  * Spawn an NPC
  *
  * @address{BPRE,0805E590}
  */
 POKEAGB_EXTERN u8 npc_spawn_with_provided_template_int(struct RomNpc *npc, struct Template *template, u8 bank, u8 map, u16 x, u16 y);
+
+/**
+ * @address{BPRE,0805EFF4}
+ */
+POKEAGB_EXTERN void npc_805EFF4(struct NpcState *state);
 
 /**
  * Create an NpcState for the given RomNpc and return its number in the global NpcState Array

@@ -362,6 +362,10 @@ POKEAGB_EXTERN s16 get_spring_animation(s16 phase);
  */
 POKEAGB_EXTERN u8 object_clone(struct Object* src, s16 x, s16 y, u8 priority);
 
+/**
+ * @address{BPRE,08008A58}
+ */
+POKEAGB_EXTERN u8* obj_set_f18_to_r0_f42_to_40(struct Object *obj, u32 f18);
 
 POKEAGB_END_DECL
 

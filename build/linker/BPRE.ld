@@ -433,6 +433,7 @@ PROVIDE(obj_delete = 0x080073dc|1);
 PROVIDE(obj_delete_and_free = 0x08007804|1);
 PROVIDE(obj_free = 0x080836b4|1);
 PROVIDE(obj_id_set_rotscale = 0x08075858|1);
+PROVIDE(obj_set_f18_to_r0_f42_to_40 = 0x08008a58|1);
 PROVIDE(obj_sync_something = 0x08006ba8|1);
 PROVIDE(obj_sync_superstate = 0x08006ba8|1);
 PROVIDE(objc_exec = 0x08006b5c|1);
@@ -503,6 +504,7 @@ PROVIDE(wild_pokemon_data = 0x083c9cb8);
 
 PROVIDE(an_exclamation_mark = 0x08066920|1);
 PROVIDE(coordinates_move_direction = 0x08063a20|1);
+PROVIDE(npc_805EFF4 = 0x0805eff4|1);
 PROVIDE(npc_change_sprite = 0x0805f060|1);
 PROVIDE(npc_direction_to_obj_anim_image_number = 0x08063430|1);
 PROVIDE(npc_fix_position = 0x08063ad4|1);
@@ -517,6 +519,7 @@ PROVIDE(npc_obj_offscreen_culling_and_flag_update = 0x080679f8|1);
 PROVIDE(npc_set_state_2 = 0x08063ca4|1);
 PROVIDE(npc_spawn_with_provided_template_int = 0x0805e590|1);
 PROVIDE(npc_states = 0x02036e38);
+PROVIDE(npc_to_objtemplate__with_indexed_objfunc = 0x0805e940|1);
 PROVIDE(npc_trainer_and_raycast_hit = 0x08081bec|1);
 PROVIDE(npc_turn = 0x0805f218|1);
 PROVIDE(npc_y_height_related = 0x080682f8|1);
@@ -541,8 +544,10 @@ PROVIDE(sm_close_menu = 0x0806fea0|1);
  * include/pokeagb/overworld/player.h
  */
 
+PROVIDE(arrow_init_something = 0x080db0c4|1);
 PROVIDE(player_avatar_get_type = 0x0805c808|1);
 PROVIDE(player_cant_double_battle = 0x08040cc4|1);
+PROVIDE(walkrun_init_something = 0x0805f02c|1);
 
 /*
  * include/pokeagb/overworld/script.h

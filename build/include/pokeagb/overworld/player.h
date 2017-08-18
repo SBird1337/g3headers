@@ -57,6 +57,16 @@ u8 player_avatar_get_type(enum PlayerAvatarType type);
  */
 POKEAGB_EXTERN u8 player_cant_double_battle();
 
+/**
+ * @address{BPRE,0805F02C}
+ */
+POKEAGB_EXTERN void walkrun_init_something(u8 npc_id, u8 obj_id);
+
+/**
+ * @address{BPRE,080DB0C4}
+ */
+POKEAGB_EXTERN u8 arrow_init_something();
+
 POKEAGB_END_DECL
 
 #endif
