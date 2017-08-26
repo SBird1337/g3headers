@@ -293,6 +293,18 @@ POKEAGB_EXTERN void script_env_enable(void);
 POKEAGB_EXTERN void script_env_disable(void);
 
 /**
+ * Switch the script environment into running from a waitstate
+ * @address{BPRE,08069B34}
+ */
+POKEAGB_EXTERN void script_env_2_enable_and_set_ctx_running(void);
+
+/**
+ * Switch the script environment into a waitstate
+ * @address{BPRE,08069B28}
+ */
+POKEAGB_EXTERN void script_env_2_enable_and_set_ctx_paused(void);
+
+/**
  * Set a flag
  * @address{BPRE,0806E680}
  */
