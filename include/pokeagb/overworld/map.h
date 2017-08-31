@@ -435,6 +435,12 @@ POKEAGB_EXTERN struct MapHeader* mapheader_by_mapnumbers(u8 bank, u8 map);
 POKEAGB_EXTERN u8 cur_mapdata_height_mismatch(u8 height, s16 x, s16 y);
 
 /**
+ * Set the specified warp to the given parameters
+ * @address{BPRE,080551DC}
+ */
+POKEAGB_EXTERN void warp_set(struct WarpData *warp, s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y);
+
+/**
  * Check if map light supports flying/teleporting. I.e not indoors or cave.
  * @address{BPRE,080561FC}
  */

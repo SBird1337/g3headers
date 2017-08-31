@@ -305,6 +305,18 @@ POKEAGB_EXTERN void script_env_2_enable_and_set_ctx_running(void);
 POKEAGB_EXTERN void script_env_2_enable_and_set_ctx_paused(void);
 
 /**
+ * Read a half word and advance the script pointer
+ * @address{BPRE,080698F8}
+ */
+POKEAGB_EXTERN u16 script_read_halfword(struct ScriptEnvironment *env)
+
+/**
+ * Read a word and advance the script pointer
+ * @address{BPRE,08069910}
+ */
+POKEAGB_EXTERN u32 script_read_word(struct ScriptEnvironment *env)
+
+/**
  * Set a flag
  * @address{BPRE,0806E680}
  */

@@ -496,6 +496,7 @@ PROVIDE(get_wild_data_index_for_map = 0x08082934|1);
 PROVIDE(is_light_level_1_2_3_or_6__opensky = 0x080561fc|1);
 PROVIDE(log_coords_relative_camera = 0x08063bc4|1);
 PROVIDE(mapheader_by_mapnumbers = 0x08055238|1);
+PROVIDE(warp_set = 0x080551dc|1);
 PROVIDE(wild_pokemon_data = 0x083c9cb8);
 
 /*
@@ -556,7 +557,6 @@ PROVIDE(walkrun_init_something = 0x0805f02c|1);
 PROVIDE(flag_byte_access = 0x0806e5c0|1);
 PROVIDE(flag_check = 0x0806e6d0|1);
 PROVIDE(flag_clear = 0x0806e6a8|1);
-PROVIDE(flag_set = 0x0806e680|1);
 PROVIDE(hm_phase_1 = 0x03005024);
 PROVIDE(npc_get_script_by_npc_id = 0x0805fc38|1);
 PROVIDE(script_cmds = 0x0815f9b4);
@@ -569,6 +569,7 @@ PROVIDE(script_env_2_is_enabled = 0x08069958|1);
 PROVIDE(script_env_disable = 0x0806994c|1);
 PROVIDE(script_env_enable = 0x08069940|1);
 PROVIDE(script_env_init_script = 0x08069ae4|1);
+PROVIDE(script_read_halfword = 0x080698f8|1);
 PROVIDE(scripting_npc = 0x03005074);
 PROVIDE(select_pokemon_launch = 0x0811fb28|1);
 PROVIDE(special_9F = 0x080bf8fc|1);
