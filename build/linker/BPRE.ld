@@ -439,9 +439,11 @@ PROVIDE(obj_sync_superstate = 0x08006ba8|1);
 PROVIDE(objc_exec = 0x08006b5c|1);
 PROVIDE(object_clone = 0x0805fb6c|1);
 PROVIDE(objects = 0x0202063c);
+PROVIDE(palette_obj_807AA8C = 0x0807aa8c|1);
 PROVIDE(rotscale_empty = 0x08231cfc);
 PROVIDE(template_instanciate_forward_search = 0x08006f8c|1);
 PROVIDE(template_instanciate_reverse_search = 0x08006fe0|1);
+PROVIDE(tint_palette_switch = 0x08083598|1);
 
 /*
  * include/pokeagb/misc/titlescreen.h
@@ -457,6 +459,7 @@ PROVIDE(c2_main_menu_or_new_game = 0x0800c300|1);
 PROVIDE(oe_active_list_remove = 0x080837fc|1);
 PROVIDE(oe_adjust_coordinates = 0x08063bc4|1);
 PROVIDE(oe_exec = 0x08083444|1);
+PROVIDE(oe_read_word = 0x08083550|1);
 PROVIDE(oe_state = 0x020386e0);
 PROVIDE(oe_stop = 0x080836d8|1);
 
@@ -517,6 +520,8 @@ PROVIDE(npc_id_by_local_id_and_map_ret_success = 0x0805df84|1);
 PROVIDE(npc_id_by_pos_and_height = 0x0805f894|1);
 PROVIDE(npc_instanciation_something = 0x0805e72c|1);
 PROVIDE(npc_obj_offscreen_culling_and_flag_update = 0x080679f8|1);
+PROVIDE(npc_pal_idx_for_given_tag = 0x0805f5a0|1);
+PROVIDE(npc_palettes = 0x083a5158);
 PROVIDE(npc_set_state_2 = 0x08063ca4|1);
 PROVIDE(npc_spawn_with_provided_template_int = 0x0805e590|1);
 PROVIDE(npc_states = 0x02036e38);
@@ -557,6 +562,7 @@ PROVIDE(walkrun_init_something = 0x0805f02c|1);
 PROVIDE(flag_byte_access = 0x0806e5c0|1);
 PROVIDE(flag_check = 0x0806e6d0|1);
 PROVIDE(flag_clear = 0x0806e6a8|1);
+PROVIDE(flag_set = 0x0806e680|1);
 PROVIDE(hm_phase_1 = 0x03005024);
 PROVIDE(npc_get_script_by_npc_id = 0x0805fc38|1);
 PROVIDE(script_cmds = 0x0815f9b4);
@@ -570,6 +576,7 @@ PROVIDE(script_env_disable = 0x0806994c|1);
 PROVIDE(script_env_enable = 0x08069940|1);
 PROVIDE(script_env_init_script = 0x08069ae4|1);
 PROVIDE(script_read_halfword = 0x080698f8|1);
+PROVIDE(script_read_word = 0x08069910|1);
 PROVIDE(scripting_npc = 0x03005074);
 PROVIDE(select_pokemon_launch = 0x0811fb28|1);
 PROVIDE(special_9F = 0x080bf8fc|1);

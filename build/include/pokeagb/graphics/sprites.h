@@ -226,6 +226,16 @@ POKEAGB_EXTERN DEPRECATED void obj_sync_something(void);
 POKEAGB_EXTERN void obj_sync_superstate(void);
 
 /**
+ * @address{BPRE,807AA8C}
+ */
+POKEAGB_EXTERN void palette_obj_807AA8C(u8 n);
+
+/**
+ * @address{BPRE,08083598}
+ */
+POKEAGB_EXTERN void tint_palette_switch(u8 n);
+
+/**
  * @address{BPRE,08006F8C}
  */
 POKEAGB_EXTERN u8 template_instanciate_forward_search(const struct Template*,

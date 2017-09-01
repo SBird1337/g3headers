@@ -108,6 +108,11 @@ extern struct Walkrun walkrun_state;
 extern struct NpcState npc_states[16];
 
 /**
+ * @address{BPRE, 083A5158}
+ */
+extern struct SpritePalette npc_palettes[19];
+
+/**
  * Reset NPC state with no checks.
  *
  * @address{BPRE,08063D34}
@@ -149,6 +154,11 @@ POKEAGB_EXTERN void npc_fix_position(u16 x, u16 y, s16 *obj_x, s16 *obj_y);
 POKEAGB_EXTERN u8 npc_direction_to_obj_anim_image_number(u8 direction);
 
 /**
+ * @address{BPRE,0805F5A0}
+ */
+POKEAGB_EXTERN u8 npc_pal_idx_for_given_tag(u16 tag);
+
+/**
  * @address{BPRE,080682F8}
  */
 POKEAGB_EXTERN void npc_y_height_related(u8 height, struct Object *obj, u8 a3);
@@ -174,7 +184,7 @@ POKEAGB_EXTERN int npc_set_state_2(struct NpcState* npc, u8 state);
  * Create a struct Template that can be used to spawn an NPC
  * @address{BPRE,0805E940}
  */
-POKEAGB_EXTERN void npc_to_objtemplate__with_indexed_objfunc(u8 id, u8 running, struct Template *template, u32 *field14_out );
+POKEAGB_EXTERN void npc_to_objtemplate__with_indexed_objfunc(u16 id, u8 running, struct Template *template, u32 *field14_out );
 
 /**
  * Spawn an NPC
