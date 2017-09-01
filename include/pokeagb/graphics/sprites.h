@@ -248,6 +248,11 @@ POKEAGB_EXTERN u8 template_instanciate_forward_search(const struct Template*,
  */
 POKEAGB_EXTERN u8 obj_delete_and_free(struct Object*);
 
+/*
+ * @address{BPRE,08007280}
+ */
+POKEAGB_EXTERN void obj_delete_and_free_tiles(struct Object* obj);
+
 /**
  * @address{BPRE,0800F078}
  */
