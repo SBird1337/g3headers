@@ -23,6 +23,11 @@ struct Coords32 {
 struct overworld_effects_state {
     struct Coords32 effect_pos;
     u32 priority;
+    u32 field_c;
+    u32 local_id_and_mapnumber;
+    u32 local_mapbank;
+    u32 sav1_location;
+    u32 field_1c;
 };
 
 /**
