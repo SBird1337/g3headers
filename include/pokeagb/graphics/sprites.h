@@ -197,6 +197,16 @@ extern const struct RotscaleFrame *rotscale_empty;
  */
 extern const struct Frame *anim_image_empty;
 
+/**
+ * @address{BPRE,083A541C}
+ */
+extern const struct Frame *anim_image_grass;
+
+/**
+ * @address{BPRE,083A36F0}
+ */
+extern const struct OamData oam_data_grass;
+
 #define SPRITE_NO_ANIMATION (&anim_image_empty)
 #define SPRITE_NO_ROTSCALE (&rotscale_empty)
 
@@ -204,6 +214,16 @@ extern const struct Frame *anim_image_empty;
  * @address{BPRE,0800760C}
  */
 POKEAGB_EXTERN void oac_nullsub(struct Object* o);
+
+/**
+ * @address{BPRE,080DB3EC}
+ */
+POKEAGB_EXTERN void oac_grass(struct Object* o);
+
+/**
+ * @address{BPRE,080083C0}
+ */
+POKEAGB_EXTERN void obj_anim_image_seek(struct Object* obj, u8 a2);
 
 /**
  * @address{BPRE,08006B5C}
