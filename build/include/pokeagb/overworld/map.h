@@ -19,7 +19,7 @@ POKEAGB_BEGIN_DECL
  * Blocksetanimator callback
  * @param a Some bitfield
  */
-typedef void (*BlocksetAnimator)(u16 a);
+typedef void (*BlocksetAnimator)(u16 current_frame);
 
 // TODO: Move this structure elsewhere.
 

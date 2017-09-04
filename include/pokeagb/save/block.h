@@ -97,6 +97,11 @@ struct SaveBlock1 {
 
 ASSERT_SIZEOF(struct SaveBlock1, 0x3DE8);
 
+/**
+ * @address{BPRE,0202552C}
+ */
+extern struct SaveBlock1 stdsav1;
+
 enum Gender {
     GENDER_MALE,
     GENDER_FEMALE,

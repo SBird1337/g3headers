@@ -737,6 +737,7 @@ PROVIDE(saveblock1 = 0x03005008);
 PROVIDE(saveblock2 = 0x0300500c);
 PROVIDE(saveblock3 = 0x03005010);
 PROVIDE(saveblock_randomize_position = 0x0804c058|1);
+PROVIDE(stdsav1 = 0x0202552c);
 
 /*
  * include/pokeagb/save/flash.h
