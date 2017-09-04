@@ -15,6 +15,12 @@
 
 POKEAGB_BEGIN_DECL
 
+/**
+ * Blocksetanimator callback
+ * @param a Some bitfield
+ */
+typedef void (*BlocksetAnimator)(u16 a);
+
 // TODO: Move this structure elsewhere.
 
 /**
@@ -413,7 +419,39 @@ ASSERT_SIZEOF(struct MapHeader, 0x1C);
  * Current map header 
  * @address{BPRE,02036DFC}
  */
- extern struct MapHeader currentmap_header;
+extern struct MapHeader currentmap_header;
+
+/**
+ * @address{BPRE,03000FAE}
+ */
+extern u16 blockset_one_current_tile;
+
+/**
+ * @address{BPRE,03000FB0}
+ */
+extern u16 blockset_one_max_tile;
+
+/**
+ * @address{BPRE,03000FB2}
+ */
+extern u16 blockset_two_current_tile;
+
+/**
+ * @address{BPRE,03000FB4}
+ */
+extern u16 blockset_two_max_tile;
+
+/**
+ * @address{BPRE,03000FB8}
+ */
+extern BlocksetAnimator blockset_one_animator;
+
+/**
+ * @address{BPRE,03000FBC}
+ */
+extern BlocksetAnimator blockset_two_animator;
+
+
 
 /**
  * Current map header 
