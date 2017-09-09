@@ -11,6 +11,8 @@
 
 #define ADDR_VRAM 0x06000000
 
+#define memset(dst, val, size) agb_memset(dst,val,size)
+
 POKEAGB_BEGIN_DECL
 
 /**
@@ -46,7 +48,7 @@ POKEAGB_EXTERN void* memcpy(void* dst, const void* src, u32 size);
  *
  * @address{BPRE,081E5ED8}
  */
-POKEAGB_EXTERN void memset(void* dst, u8 value, u32 size);
+POKEAGB_EXTERN void agb_memset(void* dst, u8 value, size_t size);
 
 /**
  * @address{BPRE,08002B80}

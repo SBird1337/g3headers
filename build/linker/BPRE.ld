@@ -286,13 +286,13 @@ PROVIDE(TrkVolPitSet = 0x081dda44|1);
  * include/pokeagb/core/memory.h
  */
 
+PROVIDE(agb_memset = 0x081e5ed8|1);
 PROVIDE(dynamic_area = 0x02000000);
 PROVIDE(free = 0x08002bc4|1);
 PROVIDE(init_malloc = 0x08002b80|1);
 PROVIDE(malloc = 0x08002b9c|1);
 PROVIDE(malloc_and_clear = 0x08002bb0|1);
 PROVIDE(memcpy = 0x081e5e78|1);
-PROVIDE(memset = 0x081e5ed8|1);
 
 /*
  * include/pokeagb/core/random.h
