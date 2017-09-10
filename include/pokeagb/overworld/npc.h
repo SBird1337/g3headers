@@ -193,6 +193,18 @@ POKEAGB_EXTERN void npc_to_objtemplate__with_indexed_objfunc(u16 id, u8 running,
 POKEAGB_EXTERN void obj_npc_animation_step(struct NpcState *npc, struct Object *obj, u8 image);
 
 /**
+ * Create a struct Template that can be used to spawn an NPC
+ * @address{BPRE,0806359C}
+ */
+POKEAGB_EXTERN void npc_set_direction(struct NpcState *npc, u8 direction);
+
+/**
+ * Create a struct Template that can be used to spawn an NPC
+ * @address{BPRE,0805F818}
+ */
+POKEAGB_EXTERN void npc_coords_shift_still(struct NpcState *npc);
+
+/**
  * Spawn an NPC
  *
  * @address{BPRE,0805E590}
