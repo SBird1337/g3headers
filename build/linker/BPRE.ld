@@ -539,6 +539,7 @@ PROVIDE(npc_to_objtemplate__with_indexed_objfunc = 0x0805e940|1);
 PROVIDE(npc_trainer_and_raycast_hit = 0x08081bec|1);
 PROVIDE(npc_turn = 0x0805f218|1);
 PROVIDE(npc_y_height_related = 0x080682f8|1);
+PROVIDE(obj_npc_animation_step = 0x0806359c|1);
 PROVIDE(pal_patch_for_npc = 0x0805f538|1);
 PROVIDE(rom_npc_by_local_id_and_map = 0x0805fd5c|1);
 PROVIDE(rom_npc_to_npc_state = 0x0805e080|1);
