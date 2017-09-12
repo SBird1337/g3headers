@@ -533,6 +533,11 @@ extern struct map_wild_pokemon_data wild_pokemon_data[WILD_MAPS_MAX]; // maybe i
 extern u8 get_wild_data_index_for_map(void);
 
 /**
+ * @address{BPRE,08058F78}
+ */
+POKEAGB_EXTERN u16 cur_mapdata_block_role_at(u16 x, u16 y);
+
+/**
  * @address{BPRE,08058F48}
  */
 extern u32 cur_mapdata_block_get_field_at(u16 x_coord, u16 y_coord, u8 unk);

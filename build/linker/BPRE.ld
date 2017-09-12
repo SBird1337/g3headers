@@ -500,6 +500,7 @@ PROVIDE(blockset_two_animator = 0x03000fbc);
 PROVIDE(blockset_two_current_tile = 0x03000fb2);
 PROVIDE(blockset_two_max_tile = 0x03000fb4);
 PROVIDE(cur_mapdata_block_get_field_at = 0x08058f48|1);
+PROVIDE(cur_mapdata_block_role_at = 0x08058f78|1);
 PROVIDE(cur_mapdata_get_middle2bit_at = 0x08058dc4|1);
 PROVIDE(cur_mapdata_height_mismatch = 0x080681b0|1);
 PROVIDE(currentmap_header = 0x02036dfc);
