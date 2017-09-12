@@ -14,7 +14,7 @@ POKEAGB_BEGIN_DECL
 /**
  * @address{BPRE,081E3B6C}
  */
-POKEAGB_EXTERN void lz77UnCompVram(void* src, void* dst);
+POKEAGB_EXTERN void lz77UnCompVram(const void* src, void* dst);
 
 /**
  *
