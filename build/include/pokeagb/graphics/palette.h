@@ -65,7 +65,7 @@ POKEAGB_EXTERN void gpu_pal_apply(const void* palette, u16 offset, u16 size);
 /**
  * @address{BPRE,080703A8}
  */
-POKEAGB_EXTERN void gpu_pal_apply_compressed(void* palette, u16 offset, u16 size);
+POKEAGB_EXTERN void gpu_pal_apply_compressed(const void* palette, u16 offset, u16 size);
 
 /**
  * @address{BPRE,08070588}
