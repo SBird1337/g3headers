@@ -23,6 +23,11 @@ POKEAGB_EXTERN void lz77UnCompVram(const void* src, void* dst);
  */
 POKEAGB_EXTERN void CpuSet(void* src, void* dst, u32 mode);
 
+/**
+ * @address{BPRE,081E3B60}
+ */
+POKEAGB_EXTERN void CpuFastSet(void* src, void* dst, u32 mode);
+
 POKEAGB_END_DECL
 
 #endif /* POKEAGB_BIOS_H_ */

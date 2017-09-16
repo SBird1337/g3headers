@@ -117,6 +117,7 @@ PROVIDE(audio_set_mono = 0x081de7d4|1);
  * include/pokeagb/core/bios.h
  */
 
+PROVIDE(CpuFastSet = 0x081e3b60|1);
 PROVIDE(CpuSet = 0x081e3b64|1);
 PROVIDE(lz77UnCompVram = 0x081e3b6c|1);
 
