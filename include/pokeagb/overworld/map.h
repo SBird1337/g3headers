@@ -424,22 +424,22 @@ extern struct MapHeader currentmap_header;
 /**
  * @address{BPRE,03000FAE}
  */
-extern u16 blockset_one_current_tile;
+extern u16 blockset_one_current_frame;
 
 /**
  * @address{BPRE,03000FB0}
  */
-extern u16 blockset_one_max_tile;
+extern u16 blockset_one_max_frame;
 
 /**
  * @address{BPRE,03000FB2}
  */
-extern u16 blockset_two_current_tile;
+extern u16 blockset_two_current_frame;
 
 /**
  * @address{BPRE,03000FB4}
  */
-extern u16 blockset_two_max_tile;
+extern u16 blockset_two_max_frame;
 
 /**
  * @address{BPRE,03000FB8}

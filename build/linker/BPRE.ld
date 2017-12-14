@@ -495,11 +495,11 @@ PROVIDE(new_game = 0x08054a60|1);
 
 PROVIDE(blockinfo_get_field = 0x08058f1c|1);
 PROVIDE(blockset_one_animator = 0x03000fb8);
-PROVIDE(blockset_one_current_tile = 0x03000fae);
-PROVIDE(blockset_one_max_tile = 0x03000fb0);
+PROVIDE(blockset_one_current_frame = 0x03000fae);
+PROVIDE(blockset_one_max_frame = 0x03000fb0);
 PROVIDE(blockset_two_animator = 0x03000fbc);
-PROVIDE(blockset_two_current_tile = 0x03000fb2);
-PROVIDE(blockset_two_max_tile = 0x03000fb4);
+PROVIDE(blockset_two_current_frame = 0x03000fb2);
+PROVIDE(blockset_two_max_frame = 0x03000fb4);
 PROVIDE(cur_mapdata_block_get_field_at = 0x08058f48|1);
 PROVIDE(cur_mapdata_block_role_at = 0x08058f78|1);
 PROVIDE(cur_mapdata_get_middle2bit_at = 0x08058dc4|1);
