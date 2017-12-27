@@ -759,18 +759,18 @@ extern volatile __writeonly u8 REG_HALTCNT;
 
 #define DMA_COUNT_MASK 0xFFFF
 
-//#define DMA_DST_INC (0 << 0x15)
-//#define DMA_DST_DEC (1 << 0x15)
-//#define DMA_DST_FIXED (2 << 0x15)
-//#define DMA_DST_RELOAD (3 << 0x15)
-//#define DMA_DST_MODE_MASK (3 << 0x15)
+#define DMA_DST_INC (0 << 0x15)
+#define DMA_DST_DEC (1 << 0x15)
+#define DMA_DST_FIXED (2 << 0x15)
+#define DMA_DST_RELOAD (3 << 0x15)
+#define DMA_DST_MODE_MASK (3 << 0x15)
 
-//#define DMA_SRC_INC (0 << 0x17)
-//#define DMA_SRC_DEC (1 << 0x17)
-//#define DMA_SRC_FIXED (2 << 0x17)
-//#define DMA_SRC_MODE_MASK (3 << 0x17)
+#define DMA_SRC_INC (0 << 0x17)
+#define DMA_SRC_DEC (1 << 0x17)
+#define DMA_SRC_FIXED (2 << 0x17)
+#define DMA_SRC_MODE_MASK (3 << 0x17)
 
-//#define DMA_REPEAT (1 << 0x19)
+#define DMA_REPEAT (1 << 0x19)
 
 #define DMA_16 (0 << 0x1A)
 #define DMA_32 (1 << 0x1A)
@@ -780,8 +780,8 @@ extern volatile __writeonly u8 REG_HALTCNT;
 #define DMA_AT_HBLANK (2 << 0x1C)
 #define DMA_AT_REFRESH (3 << 0x1C)
 
-//#define DMA_IRQ (1 << 0x1E)
-//#define DMA_ENABLE (1 << 0x1F)
+#define DMA_IRQ (1 << 0x1E)
+#define DMA_ENABLE (1 << 0x1F)
 
 /*
  * GameFreak Engine IO register buffer and helper functions
