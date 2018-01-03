@@ -44,7 +44,7 @@ ASSERT_SIZEOF(enum PokemonType, 1);
  */
 extern pchar pokemon_type_names[TYPE_MAX][POKEAGB_TYPE_NAME_LENGTH];
 
-struct TypeEffectiveness {
+struct TypeEffectivenessMod {
     enum PokemonType attacker;
     enum PokemonType defender;
     u8 modifier;
@@ -53,7 +53,7 @@ struct TypeEffectiveness {
 /**
  * Type effectiveness chart.
  */
-extern struct TypeEffectiveness type_effectiveness[112];
+extern struct TypeEffectivenessMod type_effectiveness[112];
 
 POKEAGB_END_DECL
 

@@ -281,7 +281,7 @@ POKEAGB_EXTERN void gpu_pal_decompress_alloc_tag_and_upload(struct SpritePalette
 /**
  * @address{BPRE,08008928}
  */
-POKEAGB_EXTERN void gpu_pal_obj_alloc_tag_and_apply(struct SpritePalette* pal);
+POKEAGB_EXTERN u8 gpu_pal_obj_alloc_tag_and_apply(struct SpritePalette* pal);
 
 /**
  * @address{BPRE,0800F034}
@@ -392,10 +392,22 @@ POKEAGB_EXTERN void obj_anim_image_start(struct Object* obj, u8 animation_num);
 POKEAGB_EXTERN s16 get_spring_animation(s16 phase);
 
 /**
+ * Resets the rotscale animation for an object and starts the animation from the specified rotscale table index 
+ * @address{BPRE,0800843C}
+ */
+POKEAGB_EXTERN void obj_rotscale_play(struct Object* obj, u8 table_index);
+
+/**
  * Duplicate the object and place it at the given coordinates. Used for reflective surfaces.
  * @address{BPRE,0805FB6C}
  */
 POKEAGB_EXTERN u8 object_clone(struct Object* src, s16 x, s16 y, u8 priority);
+
+/**
+ * reset rotscale entries for all
+ * @address{BPRE,08008560}
+ */
+POKEAGB_EXTERN void rotscale_reset(void);
 
 /**
  * @address{BPRE,08008A58}

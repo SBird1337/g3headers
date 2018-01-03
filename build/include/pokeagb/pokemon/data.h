@@ -675,7 +675,7 @@ extern u8 pokemon_quantity;
  * Count the number of Pokemon in the player's party and update pokemon_quantity.
  * @address{BPRE,08040C3E}
  */
-POKEAGB_EXTERN u8 party_count_pokemon(void);
+POKEAGB_EXTERN u8 count_pokemon(void);
 
 /**
  * @address{BPRE,02024284}
@@ -837,7 +837,7 @@ POKEAGB_EXTERN enum PokemonNature pokemon_get_nature(void* pokemon);
  * Get the nature from a PID
  * @address{BPRE,08042EB4}
  */
-POKEAGB_EXTERN enum PokemonNature get_nature_from_pid(u32 pid);
+POKEAGB_EXTERN enum PokemonNature get_nature(u32 pid);
 
 /**
  * Restore a Pokemon's PP fully

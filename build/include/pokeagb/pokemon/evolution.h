@@ -128,7 +128,7 @@ ASSERT_OFFSETOF(struct EvolutionEntry, species, 4);
 ASSERT_OFFSETOF(struct EvolutionEntry, unknown, 6);
 
 /**
- * @address{BPRE,08259754}
+ * @origaddress{BPRE,08259754}
  */
 extern struct EvolutionEntry evolution_table[POKEAGB_POKEMON_SLOTS][EVOLUTIONS_PER_POKEMON];
 

@@ -523,7 +523,7 @@ struct map_wild_pokemon_data {
 
 /**
  * Wild data
- * @address{BPRE,083C9CB8}
+ * @origaddress{BPRE,083C9CB8}
  */
 extern struct map_wild_pokemon_data wild_pokemon_data[WILD_MAPS_MAX]; // maybe it's not 133 and I can't count
 

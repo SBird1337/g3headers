@@ -23,32 +23,14 @@ struct Textbox {
     u8* pixels;
 };
 
-struct FontRenderState {
-    pchar* text;
-    u8 textbox_id;
-    u8 font_id;
-    u8 menu_cursor_1_a;
-    u8 menu_cursor_1_b;
-    u8 menu_cursor_2_a;
-    u8 menu_cursor_2_b;
-    u8 field_A;
-    u8 field_B;
-    u8 field_C;
-    u8 field_D;
-    u8 gap_E[2];
-    u32 field_10;
-    struct
-    {
-        u8 font_type;
-        u8 field_1;
-        u16 frames_visible_counter;
-        u32 field_4;
-    } sub;
-    u8 mode;
-    u8 text_speed;
-    u8 wait_frames;
-    u8 field_1F;
-    u8 field_20;
+struct TextboxTemplate {
+    u8 bg_id;
+    u8 x;
+    u8 y;
+    u8 width;
+    u8 height;
+    u8 pal_id;
+    u16 charbase;
 };
 
 struct TextColor {
@@ -165,18 +147,6 @@ POKEAGB_EXTERN void textbox_task_delete_scroll_arrows(u8 task_id);
 #define STRING_BUFFER_SIZE 1000
 
 /**
- * Return pointers to the strings for use by the string decoder.
- * @address{BPRE,08231E70}
- */
-extern const pchar* (*const script_buffer_functions[])(void);
-
-/**
- * Generic buffer for strings.
- * @address{BPRE,02022100}
- */
-extern pchar fcode_buffer0[FCODE_BUFFER_SIZE];
-
-/**
  * Generic buffer for strings.
  * @address{BPRE,02021CD0}
  */
@@ -219,10 +189,10 @@ POKEAGB_EXTERN pchar* pstrcat(pchar* dst, const pchar* src);
 POKEAGB_EXTERN u16 pstrlen(pchar* s);
 
 /**
- * Converts int to pstring. Maybe more.
+ * Converts int to pstring. Maybe more. Padding_x may just be the Space char.
  * @address{BPRE,08008E78}
  */
-POKEAGB_EXTERN pchar* fmt_int_10(pchar* dst, u32 num, u8, u8);
+POKEAGB_EXTERN pchar* fmt_int_10(pchar* dst, u32 num, u8 padding_x, u8);
 
 /**
  * @address{BPRE,08002C28}
@@ -337,7 +307,7 @@ POKEAGB_EXTERN void textbox_close(void);
  * Rbox init, but for a special battle box
  * @address{BPRE,08003B24}
  */
-POKEAGB_EXTERN void rbox_init_battlebox(struct Textbox*);
+POKEAGB_EXTERN void rbox_init_from_templates(struct TextboxTemplate* templates);
 
 /**
  * 

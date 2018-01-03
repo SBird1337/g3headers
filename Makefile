@@ -2,7 +2,7 @@
 
 all: docs macros
 	@cp -avr linker build
-	@python ./scripts/generate_linker_script.py
+	@python3 ./scripts/generate_linker_script.py
 	@cp -avr include build
 
 test:

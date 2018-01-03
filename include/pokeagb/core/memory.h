@@ -51,7 +51,7 @@ POKEAGB_EXTERN void *memset(void* dst, int value, size_t size);
 /**
  * @address{BPRE,08002B80}
  */
-POKEAGB_EXTERN void init_malloc(void* memory, u32 size);
+POKEAGB_EXTERN void malloc_init(void* mem_start, u32 mem_size);
 
 /**
  * @address{BPRE,02000000}

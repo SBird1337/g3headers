@@ -59,6 +59,12 @@ extern MapHook map_post_load_hook;
 POKEAGB_EXTERN void mapldr_default(void);
 
 /**
+ * Secondary overworld callback (callback 2), return to overworld and continue scripts+music.
+ * @address{BPRE,080567DC}
+ */
+POKEAGB_EXTERN void exit_to_overworld_2_switch(void);
+
+/**
  * Clear and set up save blocks for a new game.
  * Requires the player and rival to have been named.
  * @address{BPRE,08054A60}

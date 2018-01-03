@@ -112,6 +112,7 @@ PROVIDE(sync_hpbox_vram = 0x08049fd8|1);
 
 PROVIDE(audio_play = 0x080722cc|1);
 PROVIDE(audio_set_mono = 0x081de7d4|1);
+PROVIDE(current_map_music_set__default_for_battle = 0x08044090|1);
 
 /*
  * include/pokeagb/core/bios.h
@@ -289,9 +290,9 @@ PROVIDE(TrkVolPitSet = 0x081dda44|1);
 
 PROVIDE(dynamic_area = 0x02000000);
 PROVIDE(free = 0x08002bc4|1);
-PROVIDE(init_malloc = 0x08002b80|1);
 PROVIDE(malloc = 0x08002b9c|1);
 PROVIDE(malloc_and_clear = 0x08002bb0|1);
+PROVIDE(malloc_init = 0x08002b80|1);
 PROVIDE(memcpy = 0x081e5e78|1);
 PROVIDE(memset = 0x081e5ed8|1);
 
@@ -314,7 +315,6 @@ PROVIDE(box_curved = 0x080f7768|1);
 PROVIDE(box_related_one = 0x080f6cd0|1);
 PROVIDE(box_status_and_type = 0x0203709c);
 PROVIDE(dialogid_was_acknowledged = 0x08002e64|1);
-PROVIDE(fcode_buffer0 = 0x02022100);
 PROVIDE(fcode_buffer2 = 0x02021cd0);
 PROVIDE(fcode_buffer3 = 0x02021cf0);
 PROVIDE(fcode_buffer4 = 0x02021d04);
@@ -324,7 +324,7 @@ PROVIDE(font_get_width_of_string = 0x08005ed4|1);
 PROVIDE(pstrcat = 0x08008da4|1);
 PROVIDE(pstrcpy = 0x08008d84|1);
 PROVIDE(pstrlen = 0x08008e08|1);
-PROVIDE(rbox_init_battlebox = 0x08003b24|1);
+PROVIDE(rbox_init_from_templates = 0x08003b24|1);
 PROVIDE(rbox_to_vram = 0x0804a6e8|1);
 PROVIDE(rboxes = 0x020204b4);
 PROVIDE(rboxes_free = 0x08003ecc|1);
@@ -340,7 +340,6 @@ PROVIDE(rboxid_tilemap_update = 0x08003fa0|1);
 PROVIDE(rboxid_update = 0x08003f20|1);
 PROVIDE(remo_reset_acknowledgement_flags = 0x08002c28|1);
 PROVIDE(remoboxes_upload_tilesets = 0x08002de8|1);
-PROVIDE(script_buffer_functions = 0x08231e70);
 PROVIDE(string_buffer = 0x02021d18);
 PROVIDE(textbox_close = 0x080694f4|1);
 PROVIDE(textbox_fdecode_auto_and_task_add = 0x080694c8|1);
@@ -438,6 +437,7 @@ PROVIDE(obj_delete = 0x080073dc|1);
 PROVIDE(obj_delete_and_free = 0x08007804|1);
 PROVIDE(obj_free = 0x080836b4|1);
 PROVIDE(obj_id_set_rotscale = 0x08075858|1);
+PROVIDE(obj_rotscale_play = 0x0800843c|1);
 PROVIDE(obj_set_f18_to_r0_f42_to_40 = 0x08008a58|1);
 PROVIDE(obj_sync_something = 0x08006ba8|1);
 PROVIDE(obj_sync_superstate = 0x08006ba8|1);
@@ -446,6 +446,7 @@ PROVIDE(object_clone = 0x0805fb6c|1);
 PROVIDE(objects = 0x0202063c);
 PROVIDE(palette_obj_807AA8C = 0x0807aa8c|1);
 PROVIDE(rotscale_empty = 0x08231cfc);
+PROVIDE(rotscale_reset = 0x08008560|1);
 PROVIDE(template_instanciate_forward_search = 0x08006f8c|1);
 PROVIDE(template_instanciate_reverse_search = 0x08006fe0|1);
 PROVIDE(tint_palette_switch = 0x08083598|1);
@@ -483,6 +484,7 @@ PROVIDE(items = 0x083db028);
 PROVIDE(c1_overworld = 0x08056534|1);
 PROVIDE(c1_overworld_normal = 0x0805644c|1);
 PROVIDE(c2_overworld = 0x080565b4|1);
+PROVIDE(exit_to_overworld_2_switch = 0x080567dc|1);
 PROVIDE(map_loading_loop = 0x08056e5c|1);
 PROVIDE(map_loading_loop_minimal = 0x08057300|1);
 PROVIDE(map_post_load_hook = 0x03005020);
@@ -512,7 +514,6 @@ PROVIDE(is_light_level_1_2_3_or_6__opensky = 0x080561fc|1);
 PROVIDE(log_coords_relative_camera = 0x08063bc4|1);
 PROVIDE(mapheader_by_mapnumbers = 0x08055238|1);
 PROVIDE(warp_set = 0x080551dc|1);
-PROVIDE(wild_pokemon_data = 0x083c9cb8);
 
 /*
  * include/pokeagb/overworld/npc.h
@@ -645,19 +646,17 @@ PROVIDE(pokemon_ability_names = 0x0824fc40);
 PROVIDE(build_edition_identifier = 0x081e9f10);
 PROVIDE(exp_curves = 0x08253ae4);
 PROVIDE(game_language = 0x081e9f11);
-PROVIDE(pokemon_base_stats = 0x08254784);
 PROVIDE(pokemon_get_weight = 0x08088e38|1);
-PROVIDE(pokemon_names = 0x08245ee0);
 
 /*
  * include/pokeagb/pokemon/data.h
  */
 
 PROVIDE(copy_pokemon_name = 0x08040fd0|1);
-PROVIDE(get_nature_from_pid = 0x08042eb4|1);
+PROVIDE(count_pokemon = 0x08040c3e|1);
+PROVIDE(get_nature = 0x08042eb4|1);
 PROVIDE(nature_stat_bonuses = 0x08252b48);
 PROVIDE(nature_stat_mod = 0x08043698|1);
-PROVIDE(party_count_pokemon = 0x08040c3e|1);
 PROVIDE(party_opponent = 0x0202402c);
 PROVIDE(party_player = 0x02024284);
 PROVIDE(pokemon_calc_checksum = 0x0803e3e8|1);
@@ -679,17 +678,7 @@ PROVIDE(set_pokemon_data_2 = 0x080404d0|1);
  * include/pokeagb/pokemon/evolution.h
  */
 
-PROVIDE(evolution_table = 0x08259754);
 PROVIDE(get_base_species = 0x08045970|1);
-
-/*
- * include/pokeagb/pokemon/move.h
- */
-
-PROVIDE(pokemon_eggmoves = 0x0825ef0c);
-PROVIDE(pokemon_learnset = 0x0825d7b4);
-PROVIDE(pokemon_move_names = 0x08247094);
-PROVIDE(pokemon_moves = 0x08250c04);
 
 /*
  * include/pokeagb/pokemon/pokedex.h
@@ -697,8 +686,6 @@ PROVIDE(pokemon_moves = 0x08250c04);
 
 PROVIDE(dex_flag = 0x08088e74|1);
 PROVIDE(dex_flag_pokedex_index = 0x08088e74|1);
-PROVIDE(pokedex_index_to_species = 0x08043200|1);
-PROVIDE(pokedex_order = 0x08251fee);
 PROVIDE(species_to_pokedex_index = 0x08043298|1);
 
 /*
@@ -711,20 +698,9 @@ PROVIDE(load_party_icon_tiles_with_form = 0x08097054|1);
 PROVIDE(pal_heldicons = 0x0845a3ec);
 PROVIDE(pokeicon_pal_indices = 0x083d3e80);
 PROVIDE(pokeicon_pals = 0x083d3740);
-PROVIDE(pokeicon_table = 0x083d37a0);
 PROVIDE(storage_hand_palette = 0x083d2bcc);
 PROVIDE(storage_hand_template = 0x083d350c);
 PROVIDE(storage_hand_tiles = 0x083d2bec);
-
-/*
- * include/pokeagb/pokemon/sprites.h
- */
-
-PROVIDE(pokemon_graphics_back = 0x0823654c);
-PROVIDE(pokemon_graphics_front = 0x082350ac);
-PROVIDE(pokemon_palette_normal = 0x0823730c);
-PROVIDE(pokemon_palette_shiny = 0x082380cc);
-PROVIDE(pokemon_player_xy_table = 0x08235e6c);
 
 /*
  * include/pokeagb/pokemon/type.h
