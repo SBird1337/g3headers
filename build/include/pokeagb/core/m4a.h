@@ -430,6 +430,11 @@ extern struct MusicPlayerTrack pokemon_cry_tracks[];
 /* void RealClearChain(void *x); */
 
 /**
+ * @address{BPRE,0807B004}
+ */
+POKEAGB_EXTERN void audioDampenMaybe(void);
+
+/**
  * @address{BPRE,081DCFF8}
  */
 void MPlayContinue(struct MusicPlayerInfo *mplayInfo);

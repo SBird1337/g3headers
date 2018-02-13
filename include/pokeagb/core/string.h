@@ -74,6 +74,25 @@ POKEAGB_EXTERN void rboxid_clear_pixels(u8 id, u8 offset);
  */
 POKEAGB_EXTERN void rboxid_update(u8 id, u8 mode);
 
+/**
+ * Draws a rectangle in a textbox with the given color index
+ * @param id Textbox ID according to configuration
+ * @param color index in respective palette
+ * @param x x position of the rectangle top left
+ * @param y y position of the rectnagle top left
+ * @param width width of the rectangle
+ * @param height height of the rectangle
+ * @address{BPRE,08004378}
+ */
+POKEAGB_EXTERN void rboxid_fill_rectangle(u8 id, u8 color, u16 x, u16 y, u16 width, u16 height);
+
+/**
+ * Updates tilemap and tileset of given box, preserving order of execution
+ * @param id Textbox ID according to TextboxTemplate configuration
+ * @address{BPRE,0812DFE4}
+ */
+POKEAGB_EXTERN void rboxid_update_tilemap_and_tileset(u8 id);
+
 
 struct ScrollArrows {
     struct Arrow {

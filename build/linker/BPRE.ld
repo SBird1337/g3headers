@@ -89,6 +89,7 @@ PROVIDE(check_if_npc_spotted_player = 0x08081b84|1);
 PROVIDE(player_unable_to_double_battle = 0x08040cc4|1);
 PROVIDE(pokemon_purge_opponent = 0x0803da34|1);
 PROVIDE(setup_opponent_party = 0x080112e0|1);
+PROVIDE(task00_battle_intro_by_env = 0x083e7cd4);
 PROVIDE(trainer_class_money_rate = 0x0824f220);
 PROVIDE(trainer_class_names = 0x0823e558);
 PROVIDE(trainer_data = 0x0823eac8);
@@ -246,6 +247,7 @@ PROVIDE(REG_WINOUT = 0x0400004a);
  * include/pokeagb/core/m4a.h
  */
 
+PROVIDE(audioDampenMaybe = 0x0807b004|1);
 PROVIDE(CgbOscOff = 0x081ddba0|1);
 PROVIDE(CgbSound = 0x081ddc6c|1);
 PROVIDE(Clear64byte = 0x081dd48c|1);
@@ -332,12 +334,14 @@ PROVIDE(rboxid_add_812E5A4 = 0x0812e5a4|1);
 PROVIDE(rboxid_clean = 0x0810f4d8|1);
 PROVIDE(rboxid_clear_pixels = 0x0800445c|1);
 PROVIDE(rboxid_draw_text = 0x08002c48|1);
+PROVIDE(rboxid_fill_rectangle = 0x08004378|1);
 PROVIDE(rboxid_free = 0x08003e3c|1);
 PROVIDE(rboxid_get_field = 0x08004950|1);
 PROVIDE(rboxid_init = 0x08003ce4|1);
 PROVIDE(rboxid_print = 0x0812e51c|1);
 PROVIDE(rboxid_tilemap_update = 0x08003fa0|1);
 PROVIDE(rboxid_update = 0x08003f20|1);
+PROVIDE(rboxid_update_tilemap_and_tileset = 0x0812dfe4|1);
 PROVIDE(remo_reset_acknowledgement_flags = 0x08002c28|1);
 PROVIDE(remoboxes_upload_tilesets = 0x08002de8|1);
 PROVIDE(string_buffer = 0x02021d18);
@@ -686,6 +690,8 @@ PROVIDE(get_base_species = 0x08045970|1);
 
 PROVIDE(dex_flag = 0x08088e74|1);
 PROVIDE(dex_flag_pokedex_index = 0x08088e74|1);
+PROVIDE(pokedex_context = 0x0203acf0);
+PROVIDE(pokedex_count = 0x08088e8c|1);
 PROVIDE(species_to_pokedex_index = 0x08043298|1);
 
 /*
@@ -714,6 +720,7 @@ PROVIDE(pokemon_type_names = 0x0824f1a0);
 
 PROVIDE(initialize_savebocks = 0x08054a18|1);
 PROVIDE(reset_save_mapped_memory = 0x08054a28|1);
+PROVIDE(sav1_secure_increment = 0x08054e90|1);
 PROVIDE(saveblock1 = 0x03005008);
 PROVIDE(saveblock2 = 0x0300500c);
 PROVIDE(saveblock3 = 0x03005010);

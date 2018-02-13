@@ -149,6 +149,11 @@ POKEAGB_EXTERN void trainer_flag_clear(u16 trainer_id);
 POKEAGB_EXTERN bool trainer_flag_check(u16 trainer_id);
 
 /**
+ * @address{BPRE,083E7CD4}
+ */
+extern TaskCallback task00_battle_intro_by_env[4];
+
+/**
  * @address{BPRE,020386AE}
  */
 extern u16 trainerbattle_flag_id;

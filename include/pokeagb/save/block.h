@@ -215,6 +215,13 @@ POKEAGB_EXTERN void reset_save_mapped_memory(void);
  */
 POKEAGB_EXTERN void initialize_savebocks();
 
+/**
+ * Increment a value in the secure block of the save file
+ * @address{BPRE,08054E90}
+ * @param id The id to increment (0-33)
+ */
+POKEAGB_EXTERN void sav1_secure_increment(u8 id);
+
 POKEAGB_END_DECL
 
 #endif /* POKEAGB_SAVE_BLOCKH_ */

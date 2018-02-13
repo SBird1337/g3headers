@@ -20,6 +20,16 @@ enum DexFlagOperation {
     /* TODO: Figure out rest */
 };
 
+struct PdexCtx {
+    u8 state;
+    s8 pokemon_oam;
+    u8 delay_count;
+    u8 ball_oams[9];
+    u8 cursor_main_oam;
+    u8 cursor_follow_oam;
+    u8 cursor_position_internal;
+};
+
 /**
  * Check the Pokedex flag given a Pokedex index.
  * @param index The species or Pokedex index
@@ -50,9 +60,21 @@ POKEAGB_EXTERN u16 species_to_pokedex_index(enum PokemonSpecies);
 POKEAGB_EXTERN enum PokemonSpecies pokedex_index_to_species(u16);
 
 /**
+ * @address{BPRE,08088E8C}
+ */
+POKEAGB_EXTERN u32 pokedex_count(bool caught);
+
+/**
  * @origaddress{BPRE,08251FEE}
  */
 extern const u16 pokedex_order[SPECIES_MAX - 1];
+
+/**
+ * @address{BPRE,0203ACF0}
+ */
+extern struct PdexCtx *pokedex_context;
+
+extern 
 
 POKEAGB_END_DECL
 

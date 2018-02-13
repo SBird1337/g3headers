@@ -1,10 +1,10 @@
 #ifndef POKEAGB_TYPES_H_
 #define POKEAGB_TYPES_H_
 
-#include <stdint.h>
-#include <stdbool.h>
 #include "common.h"
 #include "constants.h"
+#include <stdbool.h>
+#include <stdint.h>
 
 POKEAGB_BEGIN_DECL
 
@@ -20,6 +20,8 @@ typedef volatile u32 vu32;
 typedef volatile s8 vs8;
 typedef volatile s16 vs16;
 typedef volatile s32 vs32;
+
+#define rgb5(r, g, b) (u16)(r | (g << 5) | (b << 10))
 
 POKEAGB_END_DECL
 
