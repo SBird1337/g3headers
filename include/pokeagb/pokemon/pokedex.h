@@ -35,9 +35,11 @@ struct PdexCtx {
     u8 cursor_follow_oam;
     u8 cursor_position_internal;
     u16 first_seen;
-    u8 last_shown;
+    s8 overdo_amount;
     u16 cursor_position_top;
     s8 hardware_scroll_amount;
+    u32 held_frames;
+    u8 scroll_delay;
     struct PdexLookup *lookup;
 };
 
