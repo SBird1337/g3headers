@@ -93,6 +93,11 @@ POKEAGB_EXTERN void rboxid_fill_rectangle(u8 id, u8 color, u16 x, u16 y, u16 wid
  */
 POKEAGB_EXTERN void rboxid_update_tilemap_and_tileset(u8 id);
 
+/**
+ * @address{BPRE,080044A8}
+ */
+POKEAGB_EXTERN void rboxid_vertical_scroll(u8 id, u8, u8, u8);
+
 
 struct ScrollArrows {
     struct Arrow {

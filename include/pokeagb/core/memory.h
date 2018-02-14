@@ -21,7 +21,7 @@ POKEAGB_BEGIN_DECL
 POKEAGB_EXTERN void* malloc(u32 size);
 
 /**
- * Allocates a block of size bytes of memory and zero fills it.
+ * Allocates a block of size bytes of memory and zero fills it. (deprecated)
  *
  * @address{BPRE,08002BB0}
  */

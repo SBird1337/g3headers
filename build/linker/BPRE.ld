@@ -342,6 +342,7 @@ PROVIDE(rboxid_print = 0x0812e51c|1);
 PROVIDE(rboxid_tilemap_update = 0x08003fa0|1);
 PROVIDE(rboxid_update = 0x08003f20|1);
 PROVIDE(rboxid_update_tilemap_and_tileset = 0x0812dfe4|1);
+PROVIDE(rboxid_vertical_scroll = 0x080044a8|1);
 PROVIDE(remo_reset_acknowledgement_flags = 0x08002c28|1);
 PROVIDE(remoboxes_upload_tilesets = 0x08002de8|1);
 PROVIDE(string_buffer = 0x02021d18);
@@ -692,6 +693,7 @@ PROVIDE(dex_flag = 0x08088e74|1);
 PROVIDE(dex_flag_pokedex_index = 0x08088e74|1);
 PROVIDE(pokedex_context = 0x0203acf0);
 PROVIDE(pokedex_count = 0x08088e8c|1);
+PROVIDE(pokedex_index_to_species = 0x08043200|1);
 PROVIDE(species_to_pokedex_index = 0x08043298|1);
 
 /*

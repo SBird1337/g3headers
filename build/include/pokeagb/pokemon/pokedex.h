@@ -7,8 +7,8 @@
 #define POKEAGB_POKEMON_POKEDEX_H_
 
 #include <pokeagb/common.h>
-#include <pokeagb/types.h>
 #include <pokeagb/pokemon/species.h>
+#include <pokeagb/types.h>
 
 POKEAGB_BEGIN_DECL
 
@@ -20,6 +20,12 @@ enum DexFlagOperation {
     /* TODO: Figure out rest */
 };
 
+struct PdexLookup {
+    u16 species;
+    bool seen;
+    bool caught;
+};
+
 struct PdexCtx {
     u8 state;
     s8 pokemon_oam;
@@ -28,6 +34,11 @@ struct PdexCtx {
     u8 cursor_main_oam;
     u8 cursor_follow_oam;
     u8 cursor_position_internal;
+    u16 first_seen;
+    u8 last_shown;
+    u16 cursor_position_top;
+    s8 hardware_scroll_amount;
+    struct PdexLookup *lookup;
 };
 
 /**
@@ -55,7 +66,7 @@ POKEAGB_EXTERN u16 species_to_pokedex_index(enum PokemonSpecies);
 
 /**
  * Convert a species index to a Pokedex index.
- * @origaddress{BPRE,08043200}
+ * @address{BPRE,08043200}
  */
 POKEAGB_EXTERN enum PokemonSpecies pokedex_index_to_species(u16);
 
@@ -74,8 +85,8 @@ extern const u16 pokedex_order[SPECIES_MAX - 1];
  */
 extern struct PdexCtx *pokedex_context;
 
-extern 
+extern
 
-POKEAGB_END_DECL
+    POKEAGB_END_DECL
 
 #endif /* POKEAGB_POKEMON_POKEDEX_H_ */
