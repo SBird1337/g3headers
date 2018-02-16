@@ -409,8 +409,10 @@ PROVIDE(pal_fade_control = 0x02037ab8);
 PROVIDE(pal_fade_control_and_dead_struct_reset = 0x08070528|1);
 PROVIDE(pal_fill_black = 0x0807dc00|1);
 PROVIDE(palette_bg_faded_fill_black = 0x0807db38|1);
+PROVIDE(palette_bg_unfaded = 0x020371f8);
 PROVIDE(process_palfade = 0x080704d0|1);
 PROVIDE(stdpal_get = 0x08150408|1);
+PROVIDE(tint_palette_gray = 0x08071544|1);
 
 /*
  * include/pokeagb/graphics/sprites.h

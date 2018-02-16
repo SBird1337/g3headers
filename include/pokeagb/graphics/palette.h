@@ -48,6 +48,11 @@ union Color {
 extern struct FadeControl pal_fade_control;
 
 /**
+ * @address{BPRE,020371F8}
+ */
+extern u16 palette_bg_unfaded[256];
+
+/**
  * @address{BPRE,08150408}
  */
 POKEAGB_EXTERN u8* stdpal_get(u8 id);
@@ -96,6 +101,11 @@ POKEAGB_EXTERN void palette_bg_faded_fill_black(void);
  * @address{BPRE,080704D0}
  */
 POKEAGB_EXTERN void process_palfade(void);
+
+/**
+ * @address{BPRE,08071544}
+ */
+POKEAGB_EXTERN void tint_palette_gray(u16* start, u8 n);
 
 /**
  * @address{BPRE,080088F0}

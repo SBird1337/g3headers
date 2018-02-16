@@ -30,7 +30,7 @@ struct PdexCtx {
     u8 state;
     s8 pokemon_oam;
     u8 delay_count;
-    u8 ball_oams[9];
+    u8 ball_oams[8];
     u8 cursor_main_oam;
     u8 cursor_follow_oam;
     u8 cursor_position_internal;
