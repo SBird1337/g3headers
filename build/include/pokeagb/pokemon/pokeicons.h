@@ -19,7 +19,7 @@ POKEAGB_BEGIN_DECL
 /**
  * @origaddress{BPRE,083D37A0}
  */
-extern const u8 pokeicon_table[410][POKEAGB_POKEMON_ICON_SIZE];
+extern const u8 *pokeicon_table[];
 
 /**
  * Icons Pal Table
@@ -31,9 +31,9 @@ extern const u16 pokeicon_pals[3][16];
 /**
  * Icons Pal index Table. It contains an index 0-2 for the three
  * pals which are from the icons Pal table.
- * @address{BPRE,083D3E80}
+ * @origaddress{BPRE,083D3E80}
  */
-extern const u8 pokeicon_pal_indices[410];
+extern const u8 pokeicon_pal_indices[];
 
 
 /**

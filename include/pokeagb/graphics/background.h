@@ -89,6 +89,11 @@ POKEAGB_EXTERN void bgid_send_tilemap(u8 layer);
 POKEAGB_EXTERN void bgid_set_tilemap(u8 layer, u8* space);
 
 /**
+ * @address{BPRE,08002008}
+ */
+POKEAGB_EXTERN void* bgid_get_tilemap(u8 layer);
+
+/**
  * @address{BPRE,08001658}
  */
 POKEAGB_EXTERN void bg_vram_setup(u8 mode, const struct BgConfig* config, u8 layers);

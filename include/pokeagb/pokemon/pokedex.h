@@ -40,6 +40,7 @@ struct PdexCtx {
     s8 hardware_scroll_amount;
     u32 held_frames;
     u8 scroll_delay;
+    u8 region_selected;
     struct PdexLookup *lookup;
 };
 
