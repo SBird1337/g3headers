@@ -41,6 +41,8 @@ struct PdexCtx {
     u32 held_frames;
     u8 scroll_delay;
     u8 region_selected;
+    s8 detail_pokemon_oam;
+    u8 detail_scroll_amount;
     struct PdexLookup *lookup;
 };
 
