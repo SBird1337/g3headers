@@ -261,6 +261,7 @@ PROVIDE(m4aMPlayPitchControl = 0x081de148|1);
 PROVIDE(m4aMPlayStop = 0x081dd93c|1);
 PROVIDE(m4aMPlayTempoControl = 0x081de0b8|1);
 PROVIDE(m4aMPlayVolumeControl = 0x081de0e0|1);
+PROVIDE(m4aSongNumStart = 0x081dd0f4|1);
 PROVIDE(m4aSoundMode = 0x081dd63c|1);
 PROVIDE(m4aSoundVSyncOff = 0x081dd728|1);
 PROVIDE(m4aSoundVSyncOn = 0x081dd7a4|1);
@@ -269,6 +270,7 @@ PROVIDE(mplay_BGM = 0x03007300);
 PROVIDE(mplay_SE1 = 0x03007340);
 PROVIDE(mplay_SE2 = 0x03007380);
 PROVIDE(mplay_SE3 = 0x030073d0);
+PROVIDE(MPlayAllStop = 0x081dd228|1);
 PROVIDE(MPlayContinue = 0x081dcff8|1);
 PROVIDE(MPlayExtender = 0x081dd35c|1);
 PROVIDE(MPlayFadeOut = 0x081dd014|1);
@@ -716,6 +718,8 @@ PROVIDE(storage_hand_tiles = 0x083d2bec);
  * include/pokeagb/pokemon/type.h
  */
 
+PROVIDE(pokemon_type_chart_gfx = 0x08e961dc);
+PROVIDE(pokemon_type_chart_pal = 0x08e95dbc);
 PROVIDE(pokemon_type_names = 0x0824f1a0);
 
 /*

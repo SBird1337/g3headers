@@ -38,6 +38,16 @@ enum PokemonType {
 ASSERT_SIZEOF(enum PokemonType, 1);
 
 /**
+ * @address{BPRE,08E961DC}
+ */
+void *pokemon_type_chart_gfx;
+
+/**
+ * @address{BPRE,08E95DBC}
+ */
+void *pokemon_type_chart_pal;
+
+/**
  * Pokemon type names table.
  *
  * @address{BPRE,0824F1A0}

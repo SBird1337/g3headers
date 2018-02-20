@@ -51,15 +51,10 @@ struct PokedexEntry
     /*0x00*/ pchar category_name[12];
     /*0x0C*/ u16 height; //in decimeters
     /*0x0E*/ u16 weight; //in hectograms
-    /*0x10*/ const u8 *description1;
-    /*0x14*/ const u8 *description2;
-    /*0x18*/ u32 unused;
-    /*0x1A*/ u32 pokemon_scale;
-    /*0x1C*/ u32 pokemon_offset;
-    /*0x1E*/ u32 trainer_scale;
-    /*0x20*/ u32 trainer_offset;
-    /*0x24*/ u32 trainer_offset_w_e;
-};  /*size = 0x24*/
+    /*0x10*/ const pchar *description1;
+    /*0x14*/ const pchar *description2;
+    /*0x18*/ u16 unused[6];
+};  /*size = 0x28*/
 
 extern struct PokedexEntry pokedex_data[];
 
