@@ -46,6 +46,22 @@ struct PdexCtx {
     struct PdexLookup *lookup;
 };
 
+struct PokedexEntry
+{
+    /*0x00*/ pchar category_name[12];
+    /*0x0C*/ u16 height; //in decimeters
+    /*0x0E*/ u16 weight; //in hectograms
+    /*0x10*/ const u8 *description1;
+    /*0x14*/ const u8 *description2;
+    /*0x18*/ u16 unused;
+    /*0x1A*/ u16 pokemon_scale;
+    /*0x1C*/ u16 pokemon_offset;
+    /*0x1E*/ u16 trainer_scale;
+    /*0x20*/ u16 trainer_offset;
+};  /*size = 0x24*/
+
+extern struct PokedexEntry pokedex_data[];
+
 /**
  * Check the Pokedex flag given a Pokedex index.
  * @param index The species or Pokedex index
