@@ -330,6 +330,7 @@ struct MusicPlayer
     struct MusicPlayerInfo *info;
     struct MusicPlayerTrack *track;
     u8 unk_8;
+    u8 dmy1;
     u16 unk_A;
 };
 
@@ -435,9 +436,17 @@ extern struct MusicPlayerTrack pokemon_cry_tracks[];
 POKEAGB_EXTERN void audioDampenMaybe(void);
 
 /**
+ * @address{BPRE,081DD0F4}
+ */
+void m4aSongNumStart(u16 sonid);
+/**
  * @address{BPRE,081DCFF8}
  */
 void MPlayContinue(struct MusicPlayerInfo *mplayInfo);
+/**
+ * @address{BPRE,081DD228}
+ */
+void MPlayAllStop(void);
 /**
  * @address{BPRE,081DD858}
  */
