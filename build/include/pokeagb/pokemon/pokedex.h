@@ -21,7 +21,7 @@ enum DexFlagOperation {
 };
 
 struct PdexLookup {
-    u16 species;
+    s16 species;
     bool seen;
     bool caught;
 };
