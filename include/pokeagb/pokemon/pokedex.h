@@ -43,6 +43,7 @@ struct PdexCtx {
     u8 region_selected;
     s8 detail_pokemon_oam;
     u8 detail_scroll_amount;
+    s8 detail_type_oam[2];
     struct PdexLookup *lookup;
 };
 
@@ -57,6 +58,16 @@ struct PokedexEntry
 };  /*size = 0x28*/
 
 extern struct PokedexEntry pokedex_data[];
+
+/**
+ * @address{BPRE,08E961DC}
+ */
+extern const u8 pokemon_type_chart_gfx[];
+
+/**
+ * @address{BPRE,08E95DBC}
+ */
+extern const u16 pokemon_type_chart_pal[16];
 
 /**
  * Check the Pokedex flag given a Pokedex index.

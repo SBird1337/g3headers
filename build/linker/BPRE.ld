@@ -699,6 +699,8 @@ PROVIDE(dex_flag_pokedex_index = 0x08088e74|1);
 PROVIDE(pokedex_context = 0x0203acf0);
 PROVIDE(pokedex_count = 0x08088e8c|1);
 PROVIDE(pokedex_index_to_species = 0x08043200|1);
+PROVIDE(pokemon_type_chart_gfx = 0x08e961dc);
+PROVIDE(pokemon_type_chart_pal = 0x08e95dbc);
 PROVIDE(species_to_pokedex_index = 0x08043298|1);
 
 /*
@@ -718,8 +720,6 @@ PROVIDE(storage_hand_tiles = 0x083d2bec);
  * include/pokeagb/pokemon/type.h
  */
 
-PROVIDE(pokemon_type_chart_gfx = 0x08e961dc);
-PROVIDE(pokemon_type_chart_pal = 0x08e95dbc);
 PROVIDE(pokemon_type_names = 0x0824f1a0);
 
 /*
