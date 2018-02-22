@@ -20,6 +20,20 @@ enum DexFlagOperation {
     /* TODO: Figure out rest */
 };
 
+enum DexFormType
+{
+    NORMAL,
+    ALOLA,
+    FORM_END,
+};
+
+struct DexFormEntry
+{
+    u16 index;
+    u16 species;
+    enum DexFormType type;
+};
+
 struct PdexLookup {
     s16 species;
     bool seen;
@@ -45,7 +59,10 @@ struct PdexCtx {
     s8 detail_pokemon_oam;
     u8 detail_scroll_amount;
     s8 detail_type_oam[2];
+    s8 detail_arrows_oam[2];
+    u8 detail_form_position;
     struct PdexLookup *lookup;
+    struct DexFormEntry *detail_forms;
 };
 
 struct PokedexEntry
