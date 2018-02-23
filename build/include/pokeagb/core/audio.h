@@ -177,6 +177,12 @@ POKEAGB_EXTERN void current_map_music_set__default_for_battle(u16);
  */
 POKEAGB_EXTERN void audio_set_mono(bool enable);
 
+/**
+ * Play a pokémons cry
+ * @address{BPRE,08071F24}
+ */
+POKEAGB_EXTERN void pokecry_play(u16 species, u16);
+
 POKEAGB_END_DECL
 
 #endif /* POKEAGB_CORE_AUDIO_H_ */

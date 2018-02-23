@@ -114,6 +114,7 @@ PROVIDE(sync_hpbox_vram = 0x08049fd8|1);
 PROVIDE(audio_play = 0x080722cc|1);
 PROVIDE(audio_set_mono = 0x081de7d4|1);
 PROVIDE(current_map_music_set__default_for_battle = 0x08044090|1);
+PROVIDE(pokecry_play = 0x08071f24|1);
 
 /*
  * include/pokeagb/core/bios.h
