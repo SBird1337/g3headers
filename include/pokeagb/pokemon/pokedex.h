@@ -42,7 +42,9 @@ struct PdexLookup {
 
 struct PdexCtx {
     u8 state;
+    s8 prev_pokemon_oam;
     s8 pokemon_oam;
+    s8 next_pokemon_oam;
     u8 delay_count;
     u8 scroll_speed;
     u8 ball_oams[8];
