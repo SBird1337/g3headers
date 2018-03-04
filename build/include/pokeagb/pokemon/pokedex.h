@@ -60,6 +60,7 @@ struct PdexCtx {
     u8 region_selected;
     s8 detail_pokemon_oam;
     u8 detail_scroll_amount;
+    u8 detail_scroll_max;
     s8 detail_type_oam[2];
     s8 detail_arrows_oam[2];
     u8 detail_form_position;
