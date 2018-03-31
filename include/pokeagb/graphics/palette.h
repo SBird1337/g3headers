@@ -63,6 +63,11 @@ POKEAGB_EXTERN u8* stdpal_get(u8 id);
 extern u8* gpu_pal_tag_search_lower_boundary;
 
 /**
+ * @address{BPRE,080598CC}
+ */
+POKEAGB_EXTERN void load_palette3(u16 offset, u16 count);
+
+/**
  * @address{BPRE,080703EC}
  */
 POKEAGB_EXTERN void gpu_pal_apply(const void* palette, u16 offset, u16 size);

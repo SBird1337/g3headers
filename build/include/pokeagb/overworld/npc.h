@@ -108,9 +108,9 @@ extern struct Walkrun walkrun_state;
 extern struct NpcState npc_states[16];
 
 /**
- * @address{BPRE, 083A5158}
+ * @origaddress{BPRE, 083A5158}
  */
-extern struct SpritePalette npc_palettes[19];
+extern struct SpritePalette npc_palettes[1100];
 
 /**
  * Reset NPC state with no checks.
@@ -157,6 +157,11 @@ POKEAGB_EXTERN u8 npc_direction_to_obj_anim_image_number(u8 direction);
  * @address{BPRE,0805F5A0}
  */
 POKEAGB_EXTERN u8 npc_pal_idx_for_given_tag(u16 tag);
+
+/**
+ * @address{BPRE,0805F5A0}
+ */
+POKEAGB_EXTERN u16 hacked_npc_pal_idx_for_given_tag(u16 tag);
 
 /**
  * @address{BPRE,080682F8}
