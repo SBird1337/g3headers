@@ -94,6 +94,11 @@ struct RomNpc {
 };
 
 /**
+ * @address{BPRE,083A64C8}
+ */
+extern struct Coords16 walking_directions[8];
+
+/**
  * The player's movement state.
  *
  * @address{BPRE,02037078}
@@ -120,9 +125,34 @@ extern struct SpritePalette npc_palettes[1100];
 POKEAGB_EXTERN u8 npc_half_reset_no_checks(struct NpcState* npc);
 
 /**
+ * @address{BPRE,0805FBDC}
+ */
+POKEAGB_EXTERN void npc_update_direction(struct NpcState* npc, u8 direction);
+
+/**
+ * @address{BPRE, 08064678}
+ */
+POKEAGB_EXTERN void npc_apply_direction(struct NpcState *npc, struct Object *obj, u8 direction);
+
+/**
  * @address{BPRE, 08081BEC}
  */
 POKEAGB_EXTERN u32 npc_trainer_and_raycast_hit(struct NpcState* npc);
+
+/**
+ * @address{BPRE, 080652EC}
+ */
+POKEAGB_EXTERN bool npc_run_is_finished(struct NpcState *npc, struct Object* obj);
+
+/**
+ * @address{BPRE, 08067934}
+ */
+POKEAGB_EXTERN bool npc_move_end(struct NpcState *npc, struct Object* obj);
+
+/**
+ * @address{BPRE, 080646FC}
+ */
+POKEAGB_EXTERN void npc_run_any(struct NpcState* npc, struct Object* obj, u8 direction, u8);
 
 /**
  * @address{BPRE, 08080334}
