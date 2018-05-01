@@ -134,8 +134,6 @@ extern const u16 pokedex_order[SPECIES_MAX - 1];
  */
 extern struct PdexCtx *pokedex_context;
 
-extern
-
-    POKEAGB_END_DECL
+POKEAGB_END_DECL
 
 #endif /* POKEAGB_POKEMON_POKEDEX_H_ */

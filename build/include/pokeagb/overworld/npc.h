@@ -219,7 +219,7 @@ POKEAGB_EXTERN int npc_set_state_2(struct NpcState* npc, u8 state);
  * Create a struct Template that can be used to spawn an NPC
  * @address{BPRE,0805E940}
  */
-POKEAGB_EXTERN void npc_to_objtemplate__with_indexed_objfunc(u16 id, u8 running, struct Template *template, u32 *field14_out );
+POKEAGB_EXTERN void npc_to_objtemplate__with_indexed_objfunc(u16 id, u8 running, struct Template *tmp, u32 *field14_out );
 
 /**
  * Create a struct Template that can be used to spawn an NPC
@@ -244,7 +244,7 @@ POKEAGB_EXTERN void npc_coords_shift_still(struct NpcState *npc);
  *
  * @address{BPRE,0805E590}
  */
-POKEAGB_EXTERN u8 npc_spawn_with_provided_template_int(struct RomNpc *npc, struct Template *template, u8 bank, u8 map, u16 x, u16 y);
+POKEAGB_EXTERN u8 npc_spawn_with_provided_template_int(struct RomNpc *npc, struct Template *tmp, u8 bank, u8 map, u16 x, u16 y);
 
 /**
  * @address{BPRE,0805EFF4}
