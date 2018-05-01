@@ -6,5 +6,6 @@ dist: trusty
 script: bash test/test.sh
 
 before_install:
+  - sudo apt-get -qq update
   - sudo apt-get install -y doxygen gcc-arm-none-eabi
   - arm-none-eabi-g++ --version
