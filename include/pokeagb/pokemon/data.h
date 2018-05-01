@@ -78,7 +78,7 @@ struct PokemonSubstructureGrowth {
     u16 unknown;
 };
 
-ASSERT_SIZEOF(struct PokemonSubstructureGrowth, 12);
+ASSERT_SIZEOF(struct PokemonSubstructureGrowth, 12)
 
 /**
  * Substructure containing attack related data.
@@ -88,7 +88,7 @@ struct PokemonSubstructureAttacks {
     u8 pp[4];
 };
 
-ASSERT_SIZEOF(struct PokemonSubstructureAttacks, 12);
+ASSERT_SIZEOF(struct PokemonSubstructureAttacks, 12)
 
 /**
  * Substructure containing EV and condition related data.
@@ -108,7 +108,7 @@ struct PokemonSubstructureCondition {
     u8 feel;
 };
 
-ASSERT_SIZEOF(struct PokemonSubstructureCondition, 12);
+ASSERT_SIZEOF(struct PokemonSubstructureCondition, 12)
 
 /**
  * Substructure containing miscellaneous data.
@@ -121,7 +121,7 @@ struct PokemonSubstructureMisc {
     u32 ribbons_obedience;
 };
 
-ASSERT_SIZEOF(struct PokemonSubstructureMisc, 12);
+ASSERT_SIZEOF(struct PokemonSubstructureMisc, 12)
 
 /**
  * Pokemon base data. This packed format is used for PC storage.
@@ -204,7 +204,7 @@ struct PokemonBase {
 };
 #pragma pack(pop)
 
-ASSERT_SIZEOF(struct PokemonBase, 80);
+ASSERT_SIZEOF(struct PokemonBase, 80)
 
 enum PokemonAilment {
     AILMENTBITS_NONE = 0x0,
@@ -233,7 +233,7 @@ struct Pokemon {
     u16 spdef;
 };
 
-ASSERT_SIZEOF(struct Pokemon, 100);
+ASSERT_SIZEOF(struct Pokemon, 100)
 
 /**
  * Pokemon attribute request type. Not all attributes have been documented.

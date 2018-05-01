@@ -39,14 +39,14 @@ struct TextColor {
     u8 shadow;
 };
 
-ASSERT_SIZEOF(struct Textbox, 12);
-ASSERT_OFFSETOF(struct Textbox, bg_id, 0);
-ASSERT_OFFSETOF(struct Textbox, x, 1);
-ASSERT_OFFSETOF(struct Textbox, y, 2);
-ASSERT_OFFSETOF(struct Textbox, width, 3);
-ASSERT_OFFSETOF(struct Textbox, height, 4);
-ASSERT_OFFSETOF(struct Textbox, charbase, 6);
-ASSERT_OFFSETOF(struct Textbox, pixels, 8);
+ASSERT_SIZEOF(struct Textbox, 12)
+ASSERT_OFFSETOF(struct Textbox, bg_id, 0)
+ASSERT_OFFSETOF(struct Textbox, x, 1)
+ASSERT_OFFSETOF(struct Textbox, y, 2)
+ASSERT_OFFSETOF(struct Textbox, width, 3)
+ASSERT_OFFSETOF(struct Textbox, height, 4)
+ASSERT_OFFSETOF(struct Textbox, charbase, 6)
+ASSERT_OFFSETOF(struct Textbox, pixels, 8)
 
 /**
  * @address{BPRE,020204B4}
@@ -131,12 +131,12 @@ struct ScrollArrows {
     u8 palette_index;
 };
 
-ASSERT_SIZEOF(struct ScrollArrows, 16);
-ASSERT_OFFSETOF(struct ScrollArrows, positions, 0);
-ASSERT_OFFSETOF(struct ScrollArrows, ids, 6);
-ASSERT_OFFSETOF(struct ScrollArrows, tiles_tag, 10);
-ASSERT_OFFSETOF(struct ScrollArrows, palette_tag, 12);
-ASSERT_OFFSETOF(struct ScrollArrows, palette_index, 14);
+ASSERT_SIZEOF(struct ScrollArrows, 16)
+ASSERT_OFFSETOF(struct ScrollArrows, positions, 0)
+ASSERT_OFFSETOF(struct ScrollArrows, ids, 6)
+ASSERT_OFFSETOF(struct ScrollArrows, tiles_tag, 10)
+ASSERT_OFFSETOF(struct ScrollArrows, palette_tag, 12)
+ASSERT_OFFSETOF(struct ScrollArrows, palette_index, 14)
 
 struct ScrollArrowTaskState {
     u8 starts_zero;

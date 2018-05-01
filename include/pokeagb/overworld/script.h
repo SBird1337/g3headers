@@ -105,7 +105,7 @@ struct ScriptEnvironment {
     u8 keypad_override_direction;
 };
 
-ASSERT_SIZEOF(struct ScriptEnvironment, 0x78);
+ASSERT_SIZEOF(struct ScriptEnvironment, 0x78)
 
 /**
  * Primary script environment for regular scripts.

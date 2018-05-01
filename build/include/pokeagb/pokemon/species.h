@@ -401,7 +401,7 @@ enum PokemonSpecies {
     SPECIES_MAX,
 };
 
-ASSERT_SIZEOF(enum PokemonSpecies, 2);
+ASSERT_SIZEOF(enum PokemonSpecies, 2)
 
 POKEAGB_END_DECL
 

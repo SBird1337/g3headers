@@ -37,7 +37,7 @@ enum PokemonEggGroup {
     EGG_GROUP_UNDISCOVERED
 };
 
-ASSERT_SIZEOF(enum PokemonEggGroup, 1);
+ASSERT_SIZEOF(enum PokemonEggGroup, 1)
 
 #define POKEMON_GROWTH_MAX 6
 
@@ -65,7 +65,7 @@ enum PokemonExpGrowth {
  */
 extern u32 exp_curves[POKEMON_GROWTH_MAX][100];
 
-ASSERT_SIZEOF(enum PokemonExpGrowth, 1);
+ASSERT_SIZEOF(enum PokemonExpGrowth, 1)
 
 enum PokemonColor {
     POKEMON_COLOR_RED,
@@ -80,7 +80,7 @@ enum PokemonColor {
     POKEMON_COLOR_PINK
 };
 
-ASSERT_SIZEOF(enum PokemonColor, 1);
+ASSERT_SIZEOF(enum PokemonColor, 1)
 
 struct PokemonBaseStat {
     u8 hp;
@@ -105,7 +105,7 @@ struct PokemonBaseStat {
     u16 padding;
 };
 
-ASSERT_SIZEOF(struct PokemonBaseStat, 0x1C);
+ASSERT_SIZEOF(struct PokemonBaseStat, 0x1C)
 
 /**
  * Pokemon base stats table.

@@ -121,11 +121,11 @@ struct EvolutionEntry {
     u16 unknown;
 };
 
-ASSERT_SIZEOF(struct EvolutionEntry, 8);
-ASSERT_OFFSETOF(struct EvolutionEntry, type, 0);
-ASSERT_OFFSETOF(struct EvolutionEntry, argument, 2);
-ASSERT_OFFSETOF(struct EvolutionEntry, species, 4);
-ASSERT_OFFSETOF(struct EvolutionEntry, unknown, 6);
+ASSERT_SIZEOF(struct EvolutionEntry, 8)
+ASSERT_OFFSETOF(struct EvolutionEntry, type, 0)
+ASSERT_OFFSETOF(struct EvolutionEntry, argument, 2)
+ASSERT_OFFSETOF(struct EvolutionEntry, species, 4)
+ASSERT_OFFSETOF(struct EvolutionEntry, unknown, 6)
 
 /**
  * @origaddress{BPRE,08259754}

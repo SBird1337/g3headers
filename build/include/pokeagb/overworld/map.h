@@ -56,7 +56,7 @@ struct MapTile {
     u16 permission : 6;
 };
 
-ASSERT_SIZEOF(struct MapTile, 2);
+ASSERT_SIZEOF(struct MapTile, 2)
 
 #ifdef VERSION_FRLG
 #define MAP_BLOCKSET_PRIMARY_MAX_BLOCKS 640
@@ -123,7 +123,7 @@ struct MapBlockBehavior {
     u32 field7 : 1;
 };
 
-ASSERT_SIZEOF(struct MapBlockBehavior, 4);
+ASSERT_SIZEOF(struct MapBlockBehavior, 4)
 
 /**
  * A single map block.
@@ -132,7 +132,7 @@ struct MapBlock {
     struct Tile layer[2][4];
 };
 
-ASSERT_SIZEOF(struct MapBlock, 0x10);
+ASSERT_SIZEOF(struct MapBlock, 0x10)
 
 /**
  * Blocks from which the map is constructed.
@@ -175,7 +175,7 @@ struct MapBlockset {
     struct MapBlockBehavior* behaviors;
 };
 
-ASSERT_SIZEOF(struct MapBlockset, 0x18);
+ASSERT_SIZEOF(struct MapBlockset, 0x18)
 
 /**
  * Map data.
@@ -193,9 +193,9 @@ struct MapData {
 };
 
 #ifdef VERSION_FRLG
-ASSERT_SIZEOF(struct MapData, 0x1C);
+ASSERT_SIZEOF(struct MapData, 0x1C)
 #else
-ASSERT_SIZEOF(struct MapData, 0x18);
+ASSERT_SIZEOF(struct MapData, 0x18)
 #endif
 
 /**
@@ -223,7 +223,7 @@ struct WarpData {
     struct Coords16 coordinates;
 };
 
-ASSERT_SIZEOF(struct WarpData, 8);
+ASSERT_SIZEOF(struct WarpData, 8)
 
 /**
  * Scripts that are run when the event is stepped on.
@@ -256,7 +256,7 @@ struct TriggerData {
     u8* script;
 };
 
-ASSERT_SIZEOF(struct TriggerData, 0x10);
+ASSERT_SIZEOF(struct TriggerData, 0x10)
 
 enum SignpostType {
     /**
@@ -346,7 +346,7 @@ struct SignpostData {
     };
 };
 
-ASSERT_SIZEOF(struct SignpostData, 0xC);
+ASSERT_SIZEOF(struct SignpostData, 0xC)
 
 /**
  * Events on the map.
@@ -362,7 +362,7 @@ struct MapEvents {
     struct SignpostData* signposts;
 };
 
-ASSERT_SIZEOF(struct MapEvents, 0x14);
+ASSERT_SIZEOF(struct MapEvents, 0x14)
 
 enum MapConnectionType {
     MAP_CONNECTION_NOTHING,
@@ -385,7 +385,7 @@ struct MapConnection {
     u16 padding;
 };
 
-ASSERT_SIZEOF(struct MapConnection, 0xC);
+ASSERT_SIZEOF(struct MapConnection, 0xC)
 
 struct MapConnections {
     u32 number;
@@ -412,7 +412,7 @@ struct MapHeader {
     u8 battle_type;
 };
 
-ASSERT_SIZEOF(struct MapHeader, 0x1C);
+ASSERT_SIZEOF(struct MapHeader, 0x1C)
 
 
 /**

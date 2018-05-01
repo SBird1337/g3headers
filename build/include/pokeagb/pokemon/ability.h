@@ -250,7 +250,7 @@ enum PokemonAbility {
     ABILITY_MAX,
 };
 
-ASSERT_SIZEOF(enum PokemonAbility, 1);
+ASSERT_SIZEOF(enum PokemonAbility, 1)
 
 /**
  * Pokemon ability names table.

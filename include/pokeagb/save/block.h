@@ -27,7 +27,7 @@ struct QuestLogStory {
   u8 field_667;
 };
 
-ASSERT_SIZEOF(struct QuestLogStory, 0x668);
+ASSERT_SIZEOF(struct QuestLogStory, 0x668)
 
 /**
  * Main save game data.
@@ -95,7 +95,7 @@ struct SaveBlock1 {
 };
 #pragma pack(pop)
 
-ASSERT_SIZEOF(struct SaveBlock1, 0x3DE8);
+ASSERT_SIZEOF(struct SaveBlock1, 0x3DE8)
 
 /**
  * @address{BPRE,0202552C}
@@ -168,7 +168,7 @@ struct SaveBlock2 {
     u8 last_byte_in_sav2;
 };
 
-ASSERT_SIZEOF(struct SaveBlock2, 0xFA4);
+ASSERT_SIZEOF(struct SaveBlock2, 0xFA4)
 
 /**
  * Pokemon storage related save data.
@@ -180,7 +180,7 @@ struct SaveBlock3 {
   pchar box_names[14][9];
 };
 
-ASSERT_SIZEOF(struct SaveBlock3, 0x83C2);
+ASSERT_SIZEOF(struct SaveBlock3, 0x83C2)
 
 /**
  * @address{BPRE,03005008}

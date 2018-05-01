@@ -68,7 +68,7 @@ struct BattlePokemon {
   u32 otid;
 };
 
-ASSERT_SIZEOF(struct BattlePokemon, 0x58);
+ASSERT_SIZEOF(struct BattlePokemon, 0x58)
 
 /**
  * @address{BPRE,0826056C}

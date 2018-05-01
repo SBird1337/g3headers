@@ -85,6 +85,6 @@ struct BattleStuff {
  */
 extern struct BattleStuff* battle_stuff;
 
-ASSERT_SIZEOF(struct BattleStuff, 0x200);
+ASSERT_SIZEOF(struct BattleStuff, 0x200)
 
 #endif /* POKEAGB_BATTLE_SCRIPT_H_ */

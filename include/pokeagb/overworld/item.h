@@ -352,7 +352,7 @@ enum Item {
     ITEM_MAX
 };
 
-ASSERT_SIZEOF(enum Item, 2);
+ASSERT_SIZEOF(enum Item, 2)
 
 enum ItemPocket {
     ITEM_POCKET_NONE,
@@ -363,7 +363,7 @@ enum ItemPocket {
     ITEM_POCKET_TMHM,
 };
 
-ASSERT_SIZEOF(enum ItemPocket, 1);
+ASSERT_SIZEOF(enum ItemPocket, 1)
 
 enum ItemGenericType {
     /**> Mail */
@@ -382,7 +382,7 @@ enum ItemGenericType {
     ITEM_TYPE_GENERIC_BATTLE,
 };
 
-ASSERT_SIZEOF(enum ItemGenericType, 1);
+ASSERT_SIZEOF(enum ItemGenericType, 1)
 
 enum ItemBallType {
     ITEM_TYPE_BALL_MASTER,
@@ -399,14 +399,14 @@ enum ItemBallType {
     ITEM_TYPE_BALL_PREMIER,
 };
 
-ASSERT_SIZEOF(enum ItemBallType, 1);
+ASSERT_SIZEOF(enum ItemBallType, 1)
 
 union ItemType {
     enum ItemGenericType item;
     enum ItemBallType ball;
 };
 
-ASSERT_SIZEOF(union ItemType, 1);
+ASSERT_SIZEOF(union ItemType, 1)
 
 struct ItemData {
     pchar name[POKEAGB_ITEM_NAME_LENGTH];
@@ -427,7 +427,7 @@ struct ItemData {
     u32 field_28;
 };
 
-ASSERT_SIZEOF(struct ItemData, 0x2C);
+ASSERT_SIZEOF(struct ItemData, 0x2C)
 
 /**
  * Table of item data

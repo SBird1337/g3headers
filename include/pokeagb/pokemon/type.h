@@ -35,7 +35,7 @@ enum PokemonType {
     TYPE_MAX,
 };
 
-ASSERT_SIZEOF(enum PokemonType, 1);
+ASSERT_SIZEOF(enum PokemonType, 1)
 
 /**
  * Pokemon type names table.

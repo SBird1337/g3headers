@@ -46,7 +46,7 @@ struct Frame {
     u8 vflip : 1;
 };
 
-ASSERT_SIZEOF(struct Frame, 4);
+ASSERT_SIZEOF(struct Frame, 4)
 
 #define FRAME_LOOP 0xFFFE
 #define FRAME_END 0xFFFF

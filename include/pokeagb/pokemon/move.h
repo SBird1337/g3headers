@@ -690,7 +690,7 @@ enum Move {
     MOVE_MAX,
 };
 
-ASSERT_SIZEOF(enum Move, 2);
+ASSERT_SIZEOF(enum Move, 2)
 
 enum MoveTarget {
     MOVE_TARGET_SELECT, /**< Selected target */
@@ -726,7 +726,7 @@ struct MoveData {
     u8 padding[3];
 };
 
-ASSERT_SIZEOF(struct MoveData, 0xC);
+ASSERT_SIZEOF(struct MoveData, 0xC)
 
 /**
  * Pokemon move data table.
@@ -754,7 +754,7 @@ struct LearnsetEntry {
  */
 extern struct LearnsetEntry* pokemon_learnset[412];
 
-ASSERT_SIZEOF(struct LearnsetEntry, 2);
+ASSERT_SIZEOF(struct LearnsetEntry, 2)
 
 
 #define EGGMOVE_MAX 8

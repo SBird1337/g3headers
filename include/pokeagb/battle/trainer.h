@@ -71,7 +71,7 @@ struct Trainer {
     void* party;
 };
 
-ASSERT_SIZEOF(struct Trainer, 0x28);
+ASSERT_SIZEOF(struct Trainer, 0x28)
 
 /**
  * @address{BPRE,0824F220}

@@ -27,7 +27,7 @@ struct SaveSector {
     struct SaveSectorMeta meta;
 };
 
-ASSERT_SIZEOF(struct SaveSector, FLASH_SECTOR_SIZE);
+ASSERT_SIZEOF(struct SaveSector, FLASH_SECTOR_SIZE)
 
 /**
  * @address{BPRE,03005394}
