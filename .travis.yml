@@ -3,14 +3,7 @@ language: generic
 sudo: required
 dist: trusty
 
-branches:
-  except:
-    - gh-pages
-
 script: bash test/test.sh
 
 before_install:
   - sudo apt-get install -y doxygen gcc-arm-none-eabi
-
-after_success:
-  - bash doc/deploy.sh
