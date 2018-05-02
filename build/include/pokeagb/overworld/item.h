@@ -382,6 +382,11 @@ enum ItemGenericType {
     ITEM_TYPE_GENERIC_BATTLE,
 };
 
+struct ItemCompound {
+    void* gfx;
+    void* pal;
+};
+
 ASSERT_SIZEOF(enum ItemGenericType, 1)
 
 enum ItemBallType {
@@ -448,6 +453,8 @@ POKEAGB_EXTERN u16 get_item_quantity(enum Item item);
  * @address{BPRE,08099F40}
  */
 POKEAGB_EXTERN bool check_item(enum Item item, u8 quantity);
+
+extern struct ItemCompound item_gfx_table[686];
 
 POKEAGB_END_DECL
 
