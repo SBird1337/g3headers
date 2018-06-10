@@ -63,6 +63,11 @@ struct WaveData
 #define TONEDATA_P_S_PAN    0xc0
 #define TONEDATA_P_S_PAM    TONEDATA_P_S_PAN
 
+#define CHN_TYPE_FIXED_FREQ 0x8
+#define CHN_TYPE_REVERSE 0x10
+#define CHN_TYPE_COMP 0x20
+#define CHN_TYPE_SYNTH 0x40
+
 struct ToneData
 {
     u8 type;
@@ -143,14 +148,14 @@ struct SoundChannel
     u8 pr;
     u8 rp;
     u8 d3[3];
-    u32 ct;
-    u32 fw;
+    u32 ct;     // current sample countdown
+    u32 fw;     // fine sample inter position
     u32 freq;
     struct WaveData *wav;
-    u32 cp;
+    u32 cp;     // current position of sample playback (pointer)
     struct MusicPlayerTrack *track;
-    u32 pp;
-    u32 np;
+    struct SoundChannel *pp;
+    struct SoundChannel *np;
     u32 d4;
     u16 xpi;
     u16 xpc;
@@ -181,9 +186,9 @@ struct SoundInfo
     u8 pcmDmaPeriod; // number of V-blanks per PCM DMA
     u8 maxLines;
     u8 gap[3];
-    s32 pcmSamplesPerVBlank;
-    s32 pcmFreq;
-    s32 divFreq;
+    u32 pcmSamplesPerVBlank;
+    u32 pcmFreq;
+    u32 divFreq;
     struct CgbChannel *cgbChans;
     u32 func;
     u32 intp;
