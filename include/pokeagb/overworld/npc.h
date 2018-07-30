@@ -23,6 +23,22 @@ POKEAGB_BEGIN_DECL
 #define NPC_STATE_ID_MAX 0x10
 
 /**
+ * Direction for the player to walk in, TODO: Check if right
+ */
+enum Direction {
+    NONE = 0,
+    SOUTH = 1,
+    NORTH = 2,
+    WEST = 3,
+    EAST = 4,
+    SOUTH_WEST = 5,
+    SOUTH_EAST = 6,
+    NORTH_WEST = 7,
+    NORTH_EAST = 8,
+    DIRECTION_MAX
+};
+
+/**
  * An NPC in the overworld.
  */
 struct NpcState {
@@ -41,7 +57,7 @@ struct NpcState {
     struct Coords16 stay_around;
     struct Coords16 to;
     struct Coords16 from;
-    u8 direction;
+    enum Direction direction;
     u8 movement_area;
     u8 field1A;
     u8 oamid2;
@@ -127,12 +143,12 @@ POKEAGB_EXTERN u8 npc_half_reset_no_checks(struct NpcState* npc);
 /**
  * @address{BPRE,0805FBDC}
  */
-POKEAGB_EXTERN void npc_update_direction(struct NpcState* npc, u8 direction);
+POKEAGB_EXTERN void npc_update_direction(struct NpcState* npc, enum Direction direction);
 
 /**
  * @address{BPRE, 08064678}
  */
-POKEAGB_EXTERN void npc_apply_direction(struct NpcState *npc, struct Object *obj, u8 direction);
+POKEAGB_EXTERN void npc_apply_direction(struct NpcState *npc, struct Object *obj, enum Direction direction);
 
 /**
  * @address{BPRE, 08081BEC}
@@ -152,7 +168,7 @@ POKEAGB_EXTERN bool npc_move_end(struct NpcState *npc, struct Object* obj);
 /**
  * @address{BPRE, 080646FC}
  */
-POKEAGB_EXTERN void npc_run_any(struct NpcState* npc, struct Object* obj, u8 direction, u8);
+POKEAGB_EXTERN void npc_run_any(struct NpcState* npc, struct Object* obj, enum Direction direction, u8);
 
 /**
  * @address{BPRE, 08080334}
@@ -181,7 +197,7 @@ POKEAGB_EXTERN void npc_fix_position(u16 x, u16 y, s16 *obj_x, s16 *obj_y);
  * Returns the animation image number corresponding to the given direction
  * @address{BPRE,08063430}
  */
-POKEAGB_EXTERN u8 npc_direction_to_obj_anim_image_number(u8 direction);
+POKEAGB_EXTERN u8 npc_direction_to_obj_anim_image_number(enum Direction direction);
 
 /**
  * @address{BPRE,0805F5A0}
@@ -231,7 +247,7 @@ POKEAGB_EXTERN void obj_npc_animation_step(struct NpcState *npc, struct Object *
  * Create a struct Template that can be used to spawn an NPC
  * @address{BPRE,0806359C}
  */
-POKEAGB_EXTERN void npc_set_direction(struct NpcState *npc, u8 direction);
+POKEAGB_EXTERN void npc_set_direction(struct NpcState *npc, enum Direction direction);
 
 /**
  * Create a struct Template that can be used to spawn an NPC
@@ -295,7 +311,7 @@ POKEAGB_EXTERN void npc_change_sprite(struct NpcState* npc, u8 sprite);
  *
  * @address{BPRE,0805F218}
  */
-POKEAGB_EXTERN void npc_turn(struct NpcState* npc, u8 direction);
+POKEAGB_EXTERN void npc_turn(struct NpcState* npc, enum Direction direction);
 
 /**
  * Exclamation mark animation over npc.
@@ -341,7 +357,32 @@ POKEAGB_EXTERN u8 npc_id_by_pos_and_height(u16 x, u16 y, u8 height);
  * Move the coordinates one square in the given direction.
  * @address{BPRE,08063A20}
  */
-POKEAGB_EXTERN void coordinates_move_direction(u8 direction, u16* x, u16* y);
+POKEAGB_EXTERN void coordinates_move_direction(enum Direction direction, u16* x, u16* y);
+
+/**
+ * @address{BPRE,080636AC}
+ */
+POKEAGB_EXTERN u8 npc_block_way(struct NpcState *npc, u16 x, u16 y, enum Direction direction);
+
+/**
+ * @address{BPRE,0805BC60}
+ */
+POKEAGB_EXTERN bool npc_is_passable_maybe(u16 x, u16 y, enum Direction direction);
+
+/**
+ * @address{BPRE,0805BCC8}
+ */
+POKEAGB_EXTERN bool npc_handle_jump(u16 x, u16 y, enum Direction direction);
+
+/**
+ * @address{BPRE,0805BCEC}
+ */
+POKEAGB_EXTERN bool npc_handle_strength(u16 x, u16 y, enum Direction direction);
+
+/**
+ * @address{BPRE,0805C024}
+ */
+POKEAGB_EXTERN void npc_player_set_movement_and_x22(u8 movement, u8 x22);
 
 POKEAGB_END_DECL
 
