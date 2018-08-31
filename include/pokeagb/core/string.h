@@ -264,7 +264,7 @@ POKEAGB_EXTERN u8 rboxid_draw_text(u8 id, u8 font, const pchar* s, u8 x, u8 y, u
 /**
  * @address{BPRE,0812E51C}
  */
-POKEAGB_EXTERN u8 rboxid_print(u8 id, u8 font, u8 x, u8 y, struct TextColor* color,
+POKEAGB_EXTERN u8 rboxid_print(u8 id, u8 font, u8 x, u8 y, const struct TextColor* color,
                                u8 speed, const pchar* s);
 
 /**
@@ -331,7 +331,7 @@ POKEAGB_EXTERN void textbox_close(void);
  * Rbox init, but for a special battle box
  * @address{BPRE,08003B24}
  */
-POKEAGB_EXTERN void rbox_init_from_templates(struct TextboxTemplate* templates);
+POKEAGB_EXTERN void rbox_init_from_templates(const struct TextboxTemplate* templates);
 
 /**
  * 
