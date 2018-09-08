@@ -99,6 +99,11 @@ POKEAGB_EXTERN void hblank_handler_set(SuperCallback func);
  */
 POKEAGB_EXTERN void c2_exit_to_overworld_2_switch(void);
 
+/** 
+ * @address{BPRE,080568C4}
+ */
+POKEAGB_EXTERN void c2_exit_to_overworld_1_continue_scripts_and_music(void);
+
 
 /**
  * Global game state.

@@ -128,6 +128,7 @@ PROVIDE(lz77UnCompVram = 0x081e3b6c|1);
  * include/pokeagb/core/callback.h
  */
 
+PROVIDE(c2_exit_to_overworld_1_continue_scripts_and_music = 0x080568c4|1);
 PROVIDE(c2_exit_to_overworld_2_switch = 0x080567dc|1);
 PROVIDE(hblank_handler_set = 0x08000700|1);
 PROVIDE(set_callback1 = 0x080565e0|1);
