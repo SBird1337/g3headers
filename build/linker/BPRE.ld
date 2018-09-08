@@ -682,6 +682,7 @@ PROVIDE(get_nature = 0x08042eb4|1);
 PROVIDE(nature_stat_bonuses = 0x08252b48);
 PROVIDE(nature_stat_mod = 0x08043698|1);
 PROVIDE(party_opponent = 0x0202402c);
+PROVIDE(party_opponent_purge = 0x0803da14|1);
 PROVIDE(party_player = 0x02024284);
 PROVIDE(pokemon_calc_checksum = 0x0803e3e8|1);
 PROVIDE(pokemon_get_gender = 0x0803f720|1);
