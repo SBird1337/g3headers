@@ -44,8 +44,10 @@ struct TrainerPokemonMoves {
  * The structure that describes the trainer's party.
  */
 enum TrainerPartyFlag {
+    TRAINER_PARTY_NONE = 0,
     TRAINER_PARTY_HELD_ITEM = 1,
     TRAINER_PARTY_MOVESET = 2,
+    TRAINER_PARTY_HELD_ITEM_MOVESET = 3
 };
 
 /**
@@ -54,12 +56,13 @@ enum TrainerPartyFlag {
 struct Trainer {
     enum TrainerPartyFlag flags;
     u8 trainer_class;
-    u8 music;
+    u8 music : 7;
+    u8 gender : 1;
     u8 sprite;
-    pchar name[10];
-    u16 field_E;
+    pchar name[12];
     enum Item items[TRAINER_ITEM_COUNT];
-    u32 field_18;
+    bool is_double;
+    u8 padding[3];
     u32 ai;
     u32 party_size;
 

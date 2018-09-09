@@ -678,6 +678,12 @@ extern u8 pokemon_quantity;
 POKEAGB_EXTERN u8 count_pokemon(void);
 
 /**
+ * Purge opponent party
+ * @address{BPRE,0803DA14}
+ */
+POKEAGB_EXTERN void party_opponent_purge(void);
+
+/**
  * @address{BPRE,02024284}
  */
 extern struct Pokemon party_player[POKEMON_PARTY_SIZE];

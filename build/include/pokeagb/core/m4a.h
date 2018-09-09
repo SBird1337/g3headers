@@ -68,6 +68,15 @@ struct WaveData
 #define CHN_TYPE_COMP 0x20
 #define CHN_TYPE_SYNTH 0x40
 
+#define CHN_STATUS_INIT 0x80
+#define CHN_STATUS_RELEASE 0x40
+#define CHN_STATUS_LOOP 0x10
+#define CHN_STATUS_ECHO 0x4
+#define CHN_STATUS_ATTACK 0x3
+#define CHN_STATUS_DECAY 0x2
+#define CHN_STATUS_SUSTAIN 0x1
+#define CHN_STATUS_OFF 0x0
+
 struct ToneData
 {
     u8 type;
@@ -152,7 +161,7 @@ struct SoundChannel
     u32 fw;     // fine sample inter position
     u32 freq;
     struct WaveData *wav;
-    u32 cp;     // current position of sample playback (pointer)
+    s8 *cp;     // current position of sample playback (pointer)
     struct MusicPlayerTrack *track;
     struct SoundChannel *pp;
     struct SoundChannel *np;
@@ -171,7 +180,7 @@ struct SoundInfo
     // values during sensitive operations for locking purposes.
     // This field should be volatile but isn't. This could potentially cause
     // race conditions.
-    u32 ident;
+    vu32 ident;
 
     vu8 pcmDmaCounter;
 
@@ -190,8 +199,8 @@ struct SoundInfo
     u32 pcmFreq;
     u32 divFreq;
     struct CgbChannel *cgbChans;
-    u32 func;
-    u32 intp;
+    void (*func)(void *);
+    void *intp;
     void (*CgbSound)(void);
     void (*CgbOscOff)(u8);
     u32 (*MidiKeyToCgbFreq)(u8, u8, u8);
@@ -202,6 +211,8 @@ struct SoundInfo
     struct SoundChannel chans[MAX_DIRECTSOUND_CHANNELS];
     s8 pcmBuffer[PCM_DMA_BUF_SIZE * 2];
 };
+
+#define SOUND_AREA_PTR (*(struct SoundInfo **)0x03007FF0)
 
 struct SongHeader
 {
@@ -334,7 +345,7 @@ struct MusicPlayer
 {
     struct MusicPlayerInfo *info;
     struct MusicPlayerTrack *track;
-    u8 unk_8;
+    u8 max_tracks;
     u8 dmy1;
     u16 unk_A;
 };

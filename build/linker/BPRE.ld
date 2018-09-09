@@ -128,6 +128,7 @@ PROVIDE(lz77UnCompVram = 0x081e3b6c|1);
  * include/pokeagb/core/callback.h
  */
 
+PROVIDE(c2_exit_to_overworld_1_continue_scripts_and_music = 0x080568c4|1);
 PROVIDE(c2_exit_to_overworld_2_switch = 0x080567dc|1);
 PROVIDE(hblank_handler_set = 0x08000700|1);
 PROVIDE(set_callback1 = 0x080565e0|1);
@@ -681,6 +682,7 @@ PROVIDE(get_nature = 0x08042eb4|1);
 PROVIDE(nature_stat_bonuses = 0x08252b48);
 PROVIDE(nature_stat_mod = 0x08043698|1);
 PROVIDE(party_opponent = 0x0202402c);
+PROVIDE(party_opponent_purge = 0x0803da14|1);
 PROVIDE(party_player = 0x02024284);
 PROVIDE(pokemon_calc_checksum = 0x0803e3e8|1);
 PROVIDE(pokemon_get_gender = 0x0803f720|1);

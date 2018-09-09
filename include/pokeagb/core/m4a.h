@@ -170,8 +170,6 @@ struct SoundChannel
     u16 xpc;
 };
 
-#define SOUND_AREA_PTR (*(SoundInfo *)0x03007FF0)
-
 #define MAX_DIRECTSOUND_CHANNELS 12
 
 #define PCM_DMA_BUF_SIZE 1584 // size of Direct Sound buffer
@@ -201,7 +199,7 @@ struct SoundInfo
     u32 pcmFreq;
     u32 divFreq;
     struct CgbChannel *cgbChans;
-    void (*func)(MusicPlayerInfo *);
+    void (*func)(void *);
     void *intp;
     void (*CgbSound)(void);
     void (*CgbOscOff)(u8);
@@ -213,6 +211,8 @@ struct SoundInfo
     struct SoundChannel chans[MAX_DIRECTSOUND_CHANNELS];
     s8 pcmBuffer[PCM_DMA_BUF_SIZE * 2];
 };
+
+#define SOUND_AREA_PTR (*(struct SoundInfo **)0x03007FF0)
 
 struct SongHeader
 {
