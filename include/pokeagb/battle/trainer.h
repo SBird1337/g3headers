@@ -110,7 +110,7 @@ extern struct TrainerMoneyRate trainer_class_money_rate[TRAINER_CLASS_COUNT];
 /**
  * @address{BPRE,0823EAC8}
  */
-extern struct Trainer trainer_data[TRAINER_COUNT];
+const struct Trainer trainer_data[TRAINER_COUNT];
 
 /**
  * @address{BPRE,0823E558}
