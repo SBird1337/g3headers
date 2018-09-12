@@ -71,5 +71,10 @@ POKEAGB_EXTERN void exit_to_overworld_2_switch(void);
  */
 POKEAGB_EXTERN void new_game(void);
 
+/**
+ * @address{BPRE,08056644}
+ */
+POKEAGB_EXTERN void c2_new_game(void);
+
 
 #endif /* POKEAGB_OVERWORLD_LOADING_H_ */

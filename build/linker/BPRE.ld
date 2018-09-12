@@ -496,6 +496,7 @@ PROVIDE(items = 0x083db028);
 
 PROVIDE(c1_overworld = 0x08056534|1);
 PROVIDE(c1_overworld_normal = 0x0805644c|1);
+PROVIDE(c2_new_game = 0x08056644|1);
 PROVIDE(c2_overworld = 0x080565b4|1);
 PROVIDE(exit_to_overworld_2_switch = 0x080567dc|1);
 PROVIDE(map_loading_loop = 0x08056e5c|1);
