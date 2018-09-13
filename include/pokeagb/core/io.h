@@ -734,6 +734,8 @@ extern volatile __writeonly u8 REG_HALTCNT;
  */
 #define WINOUT_BUILD(outside, object) ((outside) | ((object) << 8))
 
+#define WIN_ENALL_NO_BLD (WIN_BG0 | WIN_BG1 | WIN_BG2 | WIN_BG3 | WIN_OBJ)
+
 #define BLDCNT_BG0_SRC (1 << 0)
 #define BLDCNT_BG1_SRC (1 << 1)
 #define BLDCNT_BG2_SRC (1 << 2)
