@@ -302,6 +302,18 @@ POKEAGB_EXTERN u8 rboxid_clean(u8 id, bool update);
 POKEAGB_EXTERN u8 rboxid_free(u8 id);
 
 /**
+ * Shows the choose a name dialog
+ * @param mode Mode (0: OW, 5: pkmn)
+ * @param out String output
+ * @param sprite sprite ID
+ * @param a4 pa4
+ * @param pid Pokémon PID (mode 5)
+ * @param func return function
+ * @address{BPRE,0809D954}
+ */
+POKEAGB_EXTERN void name_chooser_enter(u8 mode, pchar* out, u16 sprite, u16 a4, u32 pid, void (*func)());
+
+/**
  *
  * @address{BPRE,080F7768}
  */
@@ -363,6 +375,16 @@ POKEAGB_EXTERN u32 rboxid_get_field(u8 rid, u8 field);
  * @address{BPRE,0812E5A4}
  */
 POKEAGB_EXTERN void rboxid_add_812E5A4(u8, u8, u8, u8, u8, u8, u32*, u8, pchar*);
+
+/**
+ * @address{BPRE,080F6E9C}
+ */
+POKEAGB_EXTERN void textbox_setup_something(void);
+
+/**
+ * @address{BPRE,08069348}
+ */
+POKEAGB_EXTERN void textbox_setup_something2(void);
 
 POKEAGB_END_DECL
 

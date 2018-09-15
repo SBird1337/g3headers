@@ -11,6 +11,7 @@
 #include "../pokemon.h"
 #include "../overworld/item.h"
 #include "../overworld/npc.h"
+#include "../graphics/sprites.h"
 
 #define TRAINER_COUNT 743
 #define TRAINER_CLASS_COUNT 107
@@ -116,6 +117,9 @@ const struct Trainer trainer_data[TRAINER_COUNT];
  * @address{BPRE,0823E558}
  */
 extern pchar trainer_class_names[TRAINER_CLASS_COUNT][13];
+
+extern struct SpriteTiles trainer_battle_sprites[];
+extern struct SpritePalette trainer_battle_palettes[];
 
 /**
  * Fill the trainer party using the Pokemon from the trainer data.
