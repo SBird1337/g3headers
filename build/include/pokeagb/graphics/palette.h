@@ -42,6 +42,9 @@ union Color {
     u16 packed;
 };
 
+#define crgb5(r,g,b) (union Color)(((u16)(((b) << 10) | ((g)<<5) | ((r)))))
+#define rgb82rgb5(r,g,b) (crgb5(r/8, g/8, b/8))
+
 /**
  * @address{BPRE,02037AB8}
  */

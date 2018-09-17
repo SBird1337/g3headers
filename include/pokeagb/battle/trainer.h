@@ -11,6 +11,7 @@
 #include "../pokemon.h"
 #include "../overworld/item.h"
 #include "../overworld/npc.h"
+#include "../graphics/sprites.h"
 
 #define TRAINER_COUNT 743
 #define TRAINER_CLASS_COUNT 107
@@ -28,16 +29,42 @@ struct TrainerPokemonBase {
     u8 level;
     u8 field3;
     enum PokemonSpecies species;
+};
 
-    /**
-     * Can be non-zero if TRAINER_PARTY_HELD_ITEM is set.
-     */
+struct TrainerPokemonItem {
+    u8 iv;
+    u8 field1;
+    u8 level;
+    u8 field3;
+    enum PokemonSpecies species;
     enum Item Item;
 };
 
 struct TrainerPokemonMoves {
-    struct TrainerPokemonBase base;
+    u8 iv;
+    u8 field1;
+    u8 level;
+    u8 field3;
+    enum PokemonSpecies species;
     enum Move moves[POKEMON_MOVE_SLOTS];
+};
+
+struct TrainerPokemonItemMoves {
+    u8 iv;
+    u8 field1;
+    u8 level;
+    u8 field3;
+    enum PokemonSpecies species;
+    enum Item Item;
+    enum Move moves[POKEMON_MOVE_SLOTS];
+};
+
+union TrainerPokemonPtr {
+    const struct TrainerPokemonBase *noItemDefaultMoves;
+    const struct TrainerPokemonItem *itemDefaultMoves;
+    const struct TrainerPokemonMoves *noItemCustomMoves;
+    const struct TrainerPokemonItemMoves *customItemCustomMoves;
+    const void *undefinedStructure;
 };
 
 /**
@@ -71,7 +98,7 @@ struct Trainer {
      * is TrainerPokemonMoves only if TRAINER_PARTY_MOVESET flag is
      * set.
      */
-    void* party;
+    union TrainerPokemonPtr party;
 };
 
 ASSERT_SIZEOF(struct Trainer, 0x28)
@@ -84,12 +111,15 @@ extern struct TrainerMoneyRate trainer_class_money_rate[TRAINER_CLASS_COUNT];
 /**
  * @address{BPRE,0823EAC8}
  */
-extern struct Trainer trainer_data[TRAINER_COUNT];
+const struct Trainer trainer_data[TRAINER_COUNT];
 
 /**
  * @address{BPRE,0823E558}
  */
 extern pchar trainer_class_names[TRAINER_CLASS_COUNT][13];
+
+extern struct SpriteTiles trainer_battle_sprites[];
+extern struct SpritePalette trainer_battle_palettes[];
 
 /**
  * Fill the trainer party using the Pokemon from the trainer data.
