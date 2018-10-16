@@ -489,43 +489,33 @@ POKEAGB_EXTERN bool is_light_level_1_2_3_or_6__opensky(u8 map_light);
  */
 extern u8 get_map_name_index(void);
 
-struct wild_pokemon {
+struct WildPokemon {
     u8 min_level;
     u8 max_level;
     u16 species;
 };
 
-union wild_pokemon_densities {
-    struct wild_pokemon wild_grass[12];
-    struct wild_pokemon wild_water[5];
-    struct wild_pokemon wild_tree[5];
-    struct wild_pokemon wild_fishing[10];
-};
-
-struct pokemon_by_encounter_rate {
-    u8 encounter_chance;
+struct WildPokemonHabitats {
+    u8 chance;
     u8 padding[3];
-    union wild_pokemon_densities *wild_encounters;
+    const struct WildPokemon *encounters;
 };
 
-struct map_wild_pokemon_data {
+struct MapWildPokemonData {
     u8 map_bank;
     u8 map_num;
     u16 padding;
-    struct pokemon_by_encounter_rate *grass_encounter; // 12 slots
-    struct pokemon_by_encounter_rate *water_encounter; // 5 slots 
-    struct pokemon_by_encounter_rate *tree_encounter; // 5 slots
-    struct pokemon_by_encounter_rate *fishing_encounter; // 10 slots
-
+    const struct WildPokemonHabitats *grass_encounter; // 12 slots
+    const struct WildPokemonHabitats *water_encounter; // 5 slots 
+    const struct WildPokemonHabitats *tree_encounter; // 5 slots
+    const struct WildPokemonHabitats *fishing_encounter; // 10 slots
 };
-
-#define WILD_MAPS_MAX 133
 
 /**
  * Wild data
  * @origaddress{BPRE,083C9CB8}
  */
-extern struct map_wild_pokemon_data wild_pokemon_data[WILD_MAPS_MAX]; // maybe it's not 133 and I can't count
+extern const struct MapWildPokemonData wild_pokemon_data[]; // maybe it's not 133 and I can't count
 
 /**
  * @address{BPRE,08082934}
